@@ -2,7 +2,7 @@
 
 /*TYPOGRAPHY*/
 h1,h2,h3,h4,h5 {
-    font-family: $header_font_stack;
+
     line-height: 120%;
 }
 
@@ -11,32 +11,32 @@ h2 {font-size: 2.9em; padding: 0 0 20px;font-weight: bold}
 h3 {font-size: 2.21em;padding:0 0 20px;}
 h4 {font-size: 1.69em;padding:0 0 10px;font-weight: bold;text-transform: uppercase}
 
-@media (min-width: 768px){
-	h1 {font-size: 5em;}
-	h2 {font-size: 4.5em}
-	h3 {font-size: 3em}
-	h4 {font-size: 1.79em}
 
-}
-
-
-.blob_text h1,
-.blob_text h2,
-.blob_text h3,
-.blob_text h4,
-.blob_text h5,
-.blob_text h6,
-h2{
-    font-family: $cursive_font_family;
+h5 {
+    font-family: $fancy_font_stack;
+    font-weight: bold;
     font-style: italic;
+    font-size: 3em;
+    &:after, &:before {
+        // TODO add double lines on either side of text
+    }
 }
+
+@media (min-width: 768px){
+	h1 { font-size: 5em; }
+	h2 { font-size: 4.5em; }
+	h3 { font-size: 2.6em; }
+	h4 { font-size: 1.79em; }
+    h5 { font-size: 2em; }
+
+}
+
 
 
 
 p { font-size: 1.5em;padding:0 0 30px;line-height: 160%;  }
 li { font-size: 1.5em;padding:0 0 5px;line-height: 160%  }
 
-section p, section li {font-size:2em;}
 
 
 li li, li p {font-size: inherit;}

@@ -88,7 +88,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-  return '0.0.5';
+  return '0.0.1';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -124,9 +124,9 @@ function webfactor_styles()
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'primary-navigation' => __('Primary Menu', 'webfactor'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'webfactor'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'webfactor') // Extra Navigation if needed (duplicate as many as you need!)
+        'primary_navigation' => __('Primary Menu', 'webfactor'), // Main Navigation
+        'footer_liens_utiles' => __('Liens utiles Footer', 'webfactor'), // Sidebar Navigation
+        'footer_reservation' => __('Réservation Footer', 'webfactor') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -548,23 +548,23 @@ add_action( 'after_setup_theme', 'remove_json_api' );
 
 
 
-function count_to_bootstrap_class($count){
-
-    if ($count == 1) {
-        $class = 'col-sm-12';
-    } elseif ($count == 2) {
-        $class = 'col-sm-6';
-    } elseif ($count == 3) {
-        $class = 'col-sm-4';
-    } elseif ($count == 4) {
-        $class = 'col-sm-3 col-xs-6';
-    } elseif ($count <= 6 ) {
-        $class = 'col-sm-2';
-    } else {
-        $class = 'col-sm-1';
-    }
-    return $class;
-};
+// function count_to_bootstrap_class($count){
+//
+//     if ($count == 1) {
+//         $class = 'col-sm-12';
+//     } elseif ($count == 2) {
+//         $class = 'col-sm-6';
+//     } elseif ($count == 3) {
+//         $class = 'col-sm-4';
+//     } elseif ($count == 4) {
+//         $class = 'col-sm-3 col-xs-6';
+//     } elseif ($count <= 6 ) {
+//         $class = 'col-sm-2';
+//     } else {
+//         $class = 'col-sm-1';
+//     }
+//     return $class;
+// };
 
 function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 

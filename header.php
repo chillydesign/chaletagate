@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="<?php bloginfo('description'); ?>">
-
+        <!-- <link href="https://fonts.googleapis.com/css?family=Cormorant:700i|Montserrat:300,300i,800,800i" rel="stylesheet"> -->
         <?php wp_head(); ?>
 
 
@@ -23,25 +23,21 @@
         <header class="header" id="header">
             <nav>
 
+                <ul>
+                    <li> <a href="<?php echo home_url(); ?>" class="branding"><?php echo $blog_name; ?></a></li>
+                </ul>
 
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-3 col-sm-push-0 col-xs-10 col-xs-push-1">
-                            <ul>
-                                <li> <a href="<?php echo home_url(); ?>" class="branding"><?php echo $blog_name; ?></a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-9">
-                            <div id="navigation_menu">
-                                <ul>
-                                    <?php chilly_nav('primary-navigation'); ?>
-                                </ul>
-                            </div>
-                        </div>
 
-                    </div>
-                    <a href="#" id="menu_button" >Menu</a>
+                <div id="navigation_menu">
+                    <ul>
+                        <?php chilly_nav('primary_navigation'); ?>
+                    </ul>
                 </div>
+
+
+
+                <a href="#" id="menu_button" >Menu</a>
+
 
             </nav>
         </header>
