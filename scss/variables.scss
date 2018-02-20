@@ -17,6 +17,7 @@ $fancy_font_stack: 'Cormorant', 'georgia', times,  serif;
 $transition_time: 0.3s;
 
 
+$max_width_paragraph: 530px;
 
 @keyframes pulse {
     from { transform: scale(1) }

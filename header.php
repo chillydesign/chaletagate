@@ -19,8 +19,13 @@
     </head>
     <body <?php body_class(); ?>>
 
+        <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+            <?php $header_image = get_field('image'); ?>
+            <?php $header_colour = get_field('colour'); ?>
+            <?php $welcome_paragraph = get_field('welcome_paragraph'); ?>
+        <?php endwhile; endif; ?>
 
-        <header id="page_header">
+        <header id="page_header"  >
             <a href="#" id="menu_button" >Menu</a>
             <nav class="container">
                 <ul>
@@ -29,11 +34,18 @@
             </nav>
 
             <div class="header_text">
+                <?php if (is_front_page()) : ?>
                 <h5>bienvenue au</h5>
                 <h1>Chalet Agate</h1>
-                <p>Profitez de l’air de la montagne dans cet appartement de 3,5 pièces à Villars-sur-Ollon au coeur des montagnes suisses.</p>
+                <p><?php echo $welcome_paragraph; ?></p>
                 <p><a href="#" class="button button_white">Réserver</a></p>
+                <?php else: ?>
+                    <h1><?php the_title(); ?></h1>
+                <?php endif; ?>
             </div>
+
+            <div id="header_image" style="background-image:url(<?php echo $header_image['sizes']['large']; ?>)"></div>
+            <div id="header_colour" class="header_colour_<?php echo $header_colour; ?>"></div>
 
         </header>
 
