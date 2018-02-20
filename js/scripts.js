@@ -21,16 +21,64 @@ import slick from '../node_modules/slick-carousel/slick/slick.js';
 
 
         $('.carousel').slick({
-          // options
-          infinite: true,
-          accessibility: true,
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          prevArrow: '<div class="slick-prev">&lt;</div>',
-          nextArrow: '<div class="slick-next">&gt;</div>',
-          autoplay: true,
-          autoplaySpeed: 2000
+            // options
+            infinite: true,
+            accessibility: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            prevArrow: '<div class="slick-prev">&lt;</div>',
+            nextArrow: '<div class="slick-next">&gt;</div>',
+            autoplay: true,
+            autoplaySpeed: 2000
         });
+        // END OF CAROUSEL
+
+
+        // MAP
+        // MEMBERS MAP
+        if (typeof map_location != 'undefined') {
+
+            var map_theme = [{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF"}]}];
+
+            var map_options = {
+                zoom: 15,
+                mapTypeControl: true,
+                scrollwheel: false,
+                draggable: true,
+                navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                styles: map_theme
+            };
+
+
+            var location_map_container = $('#map_container');
+            location_map_container.css({
+                width : '100%'
+            })
+
+            var location_map = new google.maps.Map(location_map_container.get(0), map_options);
+            var latlng = new google.maps.LatLng(  map_location.lat, map_location.lng   );
+            var infowindow = new google.maps.InfoWindow({content: ''});
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: location_map,
+                optimized: false
+            });
+
+            marker.addListener('click', function(){
+                infowindow.setContent( map_location.title );
+                infowindow.open(location_map, this);
+            })
+
+            location_map.setCenter( latlng );
+
+
+
+        };
+        // END OF MAP
+
+
+
 
 
 
