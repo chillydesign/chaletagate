@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chillydesign/blanktheme.git"
+    "url": "git+https://github.com/chillydesign/chaletagate.git"
   },
   "keywords": [
     "wordpress",
@@ -19,9 +19,9 @@
   "author": "Charles Harvey",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/chillydesign/blanktheme/issues"
+    "url": "https://github.com/chillydesign/chaletagate/issues"
   },
-  "homepage": "https://github.com/chillydesign/blanktheme#readme",
+  "homepage": "https://github.com/chillydesign/chaletagate#readme",
   "dependencies": {
     "bxslider": "^4.2.13",
     "featherlight": "^1.7.8",
