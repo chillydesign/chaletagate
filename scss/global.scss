@@ -1,0 +1,109 @@
+
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+@import 'typography';
+@import 'header';
+@import 'footer';
+@import "../node_modules/bxslider/dist/jquery.bxslider";
+@import "../node_modules/featherlight/release/featherlight.min";
+
+
+
+
+body {
+    background: $background_color;
+    color: $brand_color;
+    font-family: $font_stack;
+    font-size: 62.5%;
+    font-weight: normal;
+
+
+}
+
+
+
+section {
+    padding: 100px 0;
+
+}
+
+
+@import 'section_slider';
+@import 'section_slider_and_text';
+@import 'section_beautiful_switzerland';
+@import 'section_icon_grid';
+@import 'section_photo_title';
+@import 'section_welcome_paragraph';
+@import 'section_photo_and_text';
+@import 'section_map';
+@import 'section_gallery';
+@import 'section_half_learning_half_fun';
+@import 'contact';
+
+
+
+.squiggle {
+
+    height: auto;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: -1px;
+    left: 0;
+    right:0;
+
+
+    &.squiggle_top {
+        transform:scaleX(-1);
+        border-top: 1px solid white;
+    }
+
+    &.squiggle_bottom {
+        bottom: -1px;
+        top: auto;
+        border-bottom: 1px solid white;
+
+
+    }
+}
+
+
+
+.button, a.button, a > h6, h6  > a, input[type="submit"] {
+    background: url('../img/button_blob.svg') no-repeat center center transparent  ;
+    background-size: 100% 100%;
+    color:white;
+    padding:20px 40px;
+    margin:10px 0;
+    text-align: center;
+    display: inline-block;
+    transition: all $transition_time;
+    border: 0;
+    font-size: 18px;
+    font-family: $font_stack;
+
+    &:after, &:before {
+        content: ' ~ '
+    }
+
+    &:link, &:visited, &:active, &:hover {
+        color: white;
+    }
+    &:hover {
+        transform: scale(1.05);
+        background-color: transparent;
+
+    }
+
+
+
+}
+
+.lang_fr .en {
+    display: none;
+}
+
+.lang_en .fr {
+    display: none;
+}
