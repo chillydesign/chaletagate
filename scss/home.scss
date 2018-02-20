@@ -1,8 +1,26 @@
-#appartment_section {
-    text-align: center;
+body.home {
+    section {
+        @media (min-width: 768px) {
+            text-align: center;
 
-    p {
-        max-width: $max_width_paragraph;
-        margin: auto;
+            p {
+                max-width: $max_width_paragraph;
+                margin: auto;
+            }
+            
+        }
+
+
     }
 }
+
+#appartment_section { }
+#programme_section { }
+#location_section {
+
+    #map_container {
+        background: $light_grey;
+        height: 400px;
+        width: 100%;
+    }
+ }

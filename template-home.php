@@ -24,15 +24,81 @@
 
 
 
+        <?php $programme_paragraph = get_field('programme_paragraph'); ?>
+        <?php $winter_paragraph = get_field('winter_paragraph'); ?>
+        <?php $winter_photo = get_field('winter_photo'); ?>
+        <?php $summer_paragraph  = get_field('summer_paragraph'); ?>
+        <?php $summer_photo  = get_field('summer_photo'); ?>
+        <?php $programme_background = get_field('programme_background'); ?>
+        <section id="programme_section">
+            <div class="container">
+                <h5>Que faire à Villars-sur-Ollons?</h5>
+                <h2>Au programme</h2>
+                <p><?php echo $programme_paragraph; ?></p>
+
+                <br><br>
+
+                <div class="section_row section_row_flip">
+                    <div class="section_col">
+                        <h3>L'Hiver</h3>
+                        <p><?php echo $winter_paragraph; ?></p>
+                        <p><a href="#" class="button ">Toutes les activités >></a></p>
+                    </div>
+                    <div class="section_col">
+                        <img src="<?php echo $winter_photo['sizes']['medium']; ?>" alt="Winter">
+                    </div>
+
+                </div>
+
+                <div class="section_row">
+                    <div class="section_col">
+                        <h3>L’été</h3>
+                        <p><?php echo $summer_paragraph; ?></p>
+                        <p><a href="#" class="button ">Toutes les activités >></a></p>
+                    </div>
+                    <div class="section_col">
+                        <img src="<?php echo $summer_photo['sizes']['medium']; ?>" alt="Winter">
+                    </div>
+
+                </div>
+            </div>
+            <div class="section_background_image" style="background-image:url(<?php echo $programme_background['sizes']['large']; ?>);"></div>
+        </section>
 
 
 
+        <section id="location_section">
+            <div class="container">
+                <h5>Votre séjour?</h5>
+                <h2>Nous trouver</h2>
+
+                <div class="section_row section_row_flip">
+                    <div class="section_col">
+                        <h3>Chalet agate 17</h3>
+                        <p>Domaine de Roche Grise - Immeuble Agate  <br/>
+                            Appartement 17 - 1er étage <br/>
+                            1884 Villars-sur-Ollon<br/>
+                            <a href="#">Plan d’accès  </a></p>
+
+                            <p><a href="#" class="button">Réserver votre séjour</a></p>
+
+                        </div>
+                        <div class="section_col">
+                            <div id="map_container"></div>
+                        </div>
+
+                    </div>
 
 
-    </article>
-    <!-- /article -->
+                </div>
+            </section>
 
-<?php endwhile; ?>
+
+
+        </article>
+        <!-- /article -->
+
+    <?php endwhile; ?>
 
 <?php else: ?>
 

@@ -8,7 +8,6 @@ header#page_header {
 
     nav {
         padding-top: 30px;
-        padding-bottom: 30px;
         ul {
             margin: 0 -20px;
             padding: 0;
@@ -23,23 +22,32 @@ header#page_header {
                 padding: 0;
                 margin: 0;
                 text-transform: lowercase;
-                width: #{100% / 8};
+                width: #{100% / 6};
                 text-align: left;
-                &:nth-child(5n),
-                &:nth-child(6n),
-                &:nth-child(7n),
-                {
+                &:nth-child(5n), &:nth-child(6n), &:nth-child(7n) {
                     text-align: right;
                 }
 
                 &.branding {
-                    width: #{100% * 2 / 8};  // width should be 2/8ths wide
+                    display: none;
                     a {
                         width: 100%;
                         background: url('../img/logo.svg') no-repeat center center;
                         background-size: contain;
                         height: 50px;
                         text-indent: -9999px;
+                        &:hover {
+                            background-color: transparent;
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+
+                @media (min-width: 768px) {
+                    width: #{100% / 8};
+                    &.branding {
+                        width: #{100% * 2 / 8};  // width should be 2/8ths wide
+                        display: inline-block;
                     }
                 }
 
@@ -47,6 +55,9 @@ header#page_header {
                     color: white;
                     padding: 20px;
                     border: 0;
+                    &:hover {
+                        background-color: transparentize(white, 0.8);
+                    }
                 } // END OF A
             } // END OF LI
         } // END OF UL
