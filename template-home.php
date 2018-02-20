@@ -7,13 +7,24 @@
     <!-- article -->
     <article id="post-<?php the_ID(); ?>" >
 
-        <?php $appartment_gallery  = get_field('appartment_gallery '); ?>
+        <?php $appartment_gallery  = get_field('appartment_gallery'); ?>
         <?php $appartment_paragraph = get_field('appartment_paragraph'); ?>
         <?php $appartment_background = get_field('appartment_background'); ?>
         <section id="appartment_section">
             <div class="container">
                 <h5>découvrez</h5>
                 <h2>l’appartement</h2>
+
+
+                <div class="carousel">
+                    <?php foreach ($appartment_gallery as $gallery_image)  : ?>
+                        <div class="carousel-cell">
+                            <img src="<?php echo $gallery_image['sizes']['small']; ?>"  srcset="<?php echo $gallery_image['sizes']['medium']; ?> 1000w, <?php echo $gallery_image['sizes']['large']; ?> 2000w"   sizes="100vw" alt="<?php echo $gallery_image['title']; ?>" />
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+
 
                 <p><?php echo $appartment_paragraph; ?></p>
                 <p><a href="#" class="button ">Plus d’informations</a></p>
