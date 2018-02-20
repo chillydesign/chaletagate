@@ -60,7 +60,11 @@
                         <p><a href="#" class="button ">Toutes les activités >></a></p>
                     </div>
                     <div class="section_col">
+                        <div class="image_parallelogram">
                         <img src="<?php echo $winter_photo['sizes']['medium']; ?>" alt="Winter">
+                        <div class="shadow_1"></div>
+                        <div class="shadow_2"></div>
+                        </div>
                     </div>
 
                 </div>
@@ -72,7 +76,11 @@
                         <p><a href="#" class="button ">Toutes les activités >></a></p>
                     </div>
                     <div class="section_col">
+                        <div class="image_parallelogram">
                         <img src="<?php echo $summer_photo['sizes']['medium']; ?>" alt="Winter">
+                        <div class="shadow_1"></div>
+                        <div class="shadow_2"></div>
+                        </div>
                     </div>
 
                 </div>
