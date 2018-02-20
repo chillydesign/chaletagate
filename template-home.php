@@ -33,7 +33,11 @@
         </section>
 
 
-
+        <?php $appartment_big_picture  = get_field('appartment_big_picture'); ?>
+        <?php if ($appartment_big_picture): ?>
+        <section class="section_big_picture" style="background-image:url(<?php echo $appartment_big_picture['sizes']['large']; ?>);">
+        </section>
+        <?php endif; ?>
 
         <?php $programme_paragraph = get_field('programme_paragraph'); ?>
         <?php $winter_paragraph = get_field('winter_paragraph'); ?>
@@ -75,6 +79,13 @@
             </div>
             <div class="section_background_image" style="background-image:url(<?php echo $programme_background['sizes']['large']; ?>);"></div>
         </section>
+
+
+        <?php $programme_big_picture  = get_field('programme_big_picture'); ?>
+        <?php if ($programme_big_picture): ?>
+        <section class="section_big_picture section_big_picture_flipped" style="background-image:url(<?php echo $programme_big_picture['sizes']['large']; ?>);">
+        </section>
+        <?php endif; ?>
 
 
 

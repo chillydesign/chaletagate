@@ -26,8 +26,8 @@ import slick from '../node_modules/slick-carousel/slick/slick.js';
           accessibility: true,
           slidesToShow: 3,
           slidesToScroll: 1,
-          prevArrow: '<div class="slick-prev"><</div>',
-          nextArrow: '<div class="slick-next">></div>',
+          prevArrow: '<div class="slick-prev">&lt;</div>',
+          nextArrow: '<div class="slick-next">&gt;</div>',
           autoplay: true,
           autoplaySpeed: 2000
         });

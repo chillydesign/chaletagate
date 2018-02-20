@@ -16,7 +16,27 @@ section {
         opacity: 0.3;
 
     }
+
+
+    // big diagonal pictures that intersperce the content
+    &.section_big_picture {
+        background: no-repeat bottom center fixed;
+        background-size: 100%;
+        min-height: 600px;
+        margin: 0 0 50px;
+
+        clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+
+        &.section_big_picture_flipped {
+            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+
+        }
+
+    }
+
 }
+
+
 
 
 .section_row {
@@ -29,14 +49,8 @@ section {
 
     }
 
-    @media (min-width: 768px) {
-        text-align: right;
-        &.section_row_flip {
-            text-align: left
-        }
-    }
 
-
+    $parralel_amount: 15%;
     .section_col {
         flex: 1 auto 0;
         padding: 0 0;
@@ -44,17 +58,37 @@ section {
         min-width: 100%;
         margin: 0 0 30px;
 
-        @media (min-width: 768px) {
-            width: #{100% / 2};
-            min-width: #{100% / 2};
-            padding: 0 15px;
-        }
-
         img {
             width: 100%;
             height: auto;
         }
 
+        @media (min-width: 768px) {
+            width: #{100% / 2};
+            min-width: #{100% / 2};
+            padding: 0 15px;
+
+
+            img {
+                clip-path: polygon(0 $parralel_amount, 100% 0, 100% 100%, 0 #{100% - $parralel_amount}  );
+            }
+
+
+        }
+
+    }
+    
+    @media (min-width: 768px) {
+        text-align: right;
+        &.section_row_flip {
+            text-align: left;
+
+            .section_col {
+                img {
+                    clip-path: polygon(0 0, 100% $parralel_amount, 100% #{100% - $parralel_amount} , 0 100%);
+                }
+            }
+        }
     }
 
 
