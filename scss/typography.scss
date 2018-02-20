@@ -7,21 +7,21 @@ h1,h2,h3,h4,h5 {
 
 h1 {
     font-size: 4em;
-     padding:0 0 50px;
-     font-weight: bold;
-     text-transform: uppercase;
- }
+    padding:0 0 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 h2 {
     font-size: 2.9em;
-     padding: 0 0 20px;
-     font-weight: bold;
-     text-transform: uppercase;
- }
+    padding: 0 0 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 h3 {
     font-size: 2.21em;
     padding:0 0 10px;
-     font-weight: bold;
-     text-transform: uppercase;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 h4 {
     font-size: 1.69em;
@@ -35,32 +35,37 @@ h5 {
     font-weight: bold;
     font-style: italic;
     font-size: 3em;
-    padding-left: 50px;
-    padding-right: 50px;
     position: relative;
-    display: inline-block;
 
-    &:after, &:before {
-        content:'';
-        border-top:1px solid $brand_color;
-        border-bottom:1px solid $brand_color;
-        height: 7px;
-        width:30px;
-        position: absolute;
-        left: 0;
-        top:50%;
+
+    @media (min-width: 768px) {
+        display: inline-block;
+        padding-left: 50px;
+        padding-right: 50px;
+        &:after, &:before {
+            content:'';
+            border-top:1px solid $brand_color;
+            border-bottom:1px solid $brand_color;
+            height: 7px;
+            width:30px;
+            position: absolute;
+            left: 0;
+            top:50%;
+        }
+        &:before {
+            left: auto;
+            right: 0;
+        }
     }
-    &:before {
-        left: auto;
-        right: 0;
-    }
+
+
 }
 
 @media (min-width: 768px){
-	h1 { font-size: 5em; }
-	h2 { font-size: 4.5em; padding: 0 0 60px }
-	h3 { font-size: 2.6em; }
-	h4 { font-size: 1.79em; }
+    h1 { font-size: 5em; }
+    h2 { font-size: 4.5em; padding: 0 0 60px }
+    h3 { font-size: 2.6em; }
+    h4 { font-size: 1.79em; }
     h5 { font-size: 4em; }
 
 }
@@ -83,25 +88,29 @@ ul ul , ul ol, ol ol {font-size: inherit}
 
 
 a {
-	text-decoration: none;
-	border-bottom:1px dotted saturate(lighten($brand_color,35),10);
-	display: inline-block;
-	@include transition(0.3s);
+    text-decoration: none;
+    border-bottom:1px dotted saturate(lighten($brand_color,35),10);
+    display: inline-block;
+    @include transition(0.3s);
 
-	&:link, &:visited, &:active {
-		color: saturate(lighten($brand_color,15),10);
-	}
-	&:hover {
-		background-color: transparentize($brand_color,0.8)
-	}
+    &:link, &:visited, &:active {
+        color: saturate(lighten($brand_color,15),10);
+    }
+    &:hover {
+        background-color: transparentize($brand_color,0.8)
+    }
 
 
     &.button {
-        display: inline-block;
+        display: block;
         border: 3px solid $brand_color;
         padding: 10px 40px;
         margin:10px 0;
+        text-align: center;
         color: $brand_color;
+        @media (min-width: 768px) {
+            display: inline-block;
+        }
         &.button_white {
             border-color: white;
             color: white;
@@ -122,20 +131,20 @@ strong, b {font-weight: bold;}
 em, i {font-style: italic}
 
 table {
-	width: 100%;
-	margin:0 0 40px;
+    width: 100%;
+    margin:0 0 40px;
 }
 
 th, td {font-size: 1.5em;padding:10px;border:0}
 section td {font-size: 2em;line-height: 160%;padding:0 0 10px;}
 
 blockquote {
-	padding:20px 0 20px 40px;
-	border-left:4px solid #888;
-	margin:40px 20px 40px 40px;
-	font-size: 140%;
-	font-style: italic;
-	max-width: 700px;
+    padding:20px 0 20px 40px;
+    border-left:4px solid #888;
+    margin:40px 20px 40px 40px;
+    font-size: 140%;
+    font-style: italic;
+    max-width: 700px;
 }
 blockquote p:last-child {padding-bottom: 0}
 

@@ -27,12 +27,15 @@
 
         <header id="page_header"  >
             <a href="#" id="menu_button" >Menu</a>
-            <nav class="container">
+            <div id="mobile_branding" class=" branding"><a href="#" ><?php echo $blog_name; ?></a></div>
+            <nav class="">
+                <div class="container">
                 <ul>
                     <?php chilly_nav('header_nav'); ?>
                 </ul>
+                </div>
             </nav>
-
+            <div class="container">
             <div class="header_text">
                 <?php if (is_front_page()) : ?>
                 <h5>bienvenue au</h5>
@@ -42,6 +45,7 @@
                 <?php else: ?>
                     <h1><?php the_title(); ?></h1>
                 <?php endif; ?>
+            </div>
             </div>
 
             <div id="header_image" style="background-image:url(<?php echo $header_image['sizes']['large']; ?>)"></div>

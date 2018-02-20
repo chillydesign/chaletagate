@@ -20,11 +20,35 @@ import slick from '../node_modules/slick-carousel/slick/slick.js';
 
 
 
+        // mobile menu button
+        var $menu_button = $('#menu_button');
+        var $nav = $('nav');
+        $menu_button.on('click', function(e){
+            e.preventDefault();
+            $nav.toggleClass('visible');
+        });
+
+        // if press escape key, hide menu
+        $(document).on('keydown', function(e){
+            if(e.keyCode == 27 ){
+                $nav.removeClass('visible');
+            }
+        })
+
+
+
+
+
+        // START OF CAROUSEL
+        var $slidesToShow = 1;
+        if ($window.width() > 768 ) {
+            $slidesToShow = 3;
+        }
         $('.carousel').slick({
             // options
             infinite: true,
             accessibility: true,
-            slidesToShow: 3,
+            slidesToShow: $slidesToShow,
             slidesToScroll: 1,
             prevArrow: '<div class="slick-prev">&lt;</div>',
             nextArrow: '<div class="slick-next">&gt;</div>',
