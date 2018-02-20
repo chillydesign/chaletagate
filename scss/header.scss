@@ -99,6 +99,9 @@ header#page_header {
 
         h5 {
             font-size: 4em;
+            &:after, &:before {
+                border-color: white;
+            }
         }
         h1 {
 

@@ -35,8 +35,24 @@ h5 {
     font-weight: bold;
     font-style: italic;
     font-size: 3em;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+    display: inline-block;
+
     &:after, &:before {
-        // TODO add double lines on either side of text
+        content:'';
+        border-top:1px solid $brand_color;
+        border-bottom:1px solid $brand_color;
+        height: 7px;
+        width:30px;
+        position: absolute;
+        left: 0;
+        top:50%;
+    }
+    &:before {
+        left: auto;
+        right: 0;
     }
 }
 
