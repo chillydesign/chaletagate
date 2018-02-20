@@ -20,3 +20,16 @@ body {
 
 
 }
+
+
+.button {
+    display: inline-block;
+    border: 3px solid $brand_color;
+    padding: 10px 40px;
+    margin:10px 0;
+    color: $brand_color;
+    &.button_white {
+        border-color: white;
+        color: white;
+    }
+}

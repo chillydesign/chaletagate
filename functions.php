@@ -124,7 +124,8 @@ function webfactor_styles()
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'primary_navigation' => __('Primary Menu', 'webfactor'), // Main Navigation
+        'header_nav' => __('Header Menu', 'webfactor'), // Main Navigation
+    //    'header_right_nav' => __('Header Right Menu', 'webfactor'), // Main Navigation
         'footer_liens_utiles' => __('Liens utiles Footer', 'webfactor'), // Sidebar Navigation
         'footer_reservation' => __('Réservation Footer', 'webfactor') // Extra Navigation if needed (duplicate as many as you need!)
     ));

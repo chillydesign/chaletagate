@@ -1,0 +1,83 @@
+
+header#page_header {
+    color: white;
+    background: $brand_color;
+    margin: 0 0 40px;
+
+    nav {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+
+            li {
+                display: inline-block;
+                flex: 1 auto 0;
+                padding: 0;
+                margin: 0;
+                text-transform: lowercase;
+                width: #{100% / 8};
+                text-align: left;
+
+                &:nth-child(5n),
+                &:nth-child(6n),
+                &:nth-child(7n),
+                 {
+                    text-align: right;
+                }
+
+                &.branding {
+                    width: #{100% * 2 / 8};  // width should be 2/8ths wide
+                    a {
+                        width: 100%;
+                        background: url('../img/logo.svg') no-repeat center center;
+                        background-size: contain;
+                        height: 50px;
+                        text-indent: -9999px;
+                    }
+                }
+
+                a {
+                    color: white;
+                    padding: 20px;
+                    border: 0;
+                } // END OF A
+            } // END OF LI
+        } // END OF UL
+    } // END OF NAV
+
+
+    .header_text {
+        text-align: center;
+
+        h5 {
+            font-size: 4em;
+        }
+        h1 {
+
+        }
+        p {
+            font-size: 1.9em;
+            line-height: 150%;
+            max-width: 530px;
+            margin: auto;
+            letter-spacing: 1px;
+        }
+    } // END OF header_text
+
+    #menu_button {
+        display: inline-block;
+
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+
+
+
+} // END OF header#page_header

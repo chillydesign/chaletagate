@@ -20,26 +20,21 @@
     <body <?php body_class(); ?>>
 
 
-        <header class="header" id="header">
-            <nav>
-
+        <header id="page_header">
+            <a href="#" id="menu_button" >Menu</a>
+            <nav class="container">
                 <ul>
-                    <li> <a href="<?php echo home_url(); ?>" class="branding"><?php echo $blog_name; ?></a></li>
+                    <?php chilly_nav('header_nav'); ?>
                 </ul>
-
-
-                <div id="navigation_menu">
-                    <ul>
-                        <?php chilly_nav('primary_navigation'); ?>
-                    </ul>
-                </div>
-
-
-
-                <a href="#" id="menu_button" >Menu</a>
-
-
             </nav>
+
+            <div class="header_text">
+                <h5>bienvenue au</h5>
+                <h1>Chalet Agate</h1>
+                <p>Profitez de l’air de la montagne dans cet appartement de 3,5 pièces à Villars-sur-Ollon au coeur des montagnes suisses.</p>
+                <p><a href="#" class="button button_white">Réserver</a></p>
+            </div>
+
         </header>
 
         <main id="main" >
