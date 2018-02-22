@@ -1,4 +1,6 @@
 import slick from '../node_modules/slick-carousel/slick/slick.js';
+import Masonry from '../node_modules/masonry-layout/dist/masonry.pkgd.js';
+import featherlight from '../node_modules/featherlight/release/featherlight.min.js';
 
 (function ($, root, undefined) {
 
@@ -34,6 +36,14 @@ import slick from '../node_modules/slick-carousel/slick/slick.js';
                 $nav.removeClass('visible');
             }
         })
+
+
+        //MASONRY GALLERY
+        var grid = document.querySelector('.masonry_gallery');
+        var msnry = new Masonry( grid, {
+          itemSelector: '.grid_item'
+        });
+        //END OF MASONRY GALLERY
 
 
 

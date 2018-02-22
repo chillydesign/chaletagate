@@ -35,8 +35,10 @@
 
         <?php $appartment_big_picture  = get_field('appartment_big_picture'); ?>
         <?php if ($appartment_big_picture): ?>
-        <section class="section_big_picture" style="background-image:url(<?php echo $appartment_big_picture['sizes']['large']; ?>);">
-        </section>
+            <section class="section_big_picture" style="background-image:url(<?php echo $appartment_big_picture['sizes']['large']; ?>);">
+                <div class="white_bar"></div>
+                <div class="white_bar white_bar_2"></div>
+            </section>
         <?php endif; ?>
 
         <?php $programme_paragraph = get_field('programme_paragraph'); ?>
@@ -61,9 +63,9 @@
                     </div>
                     <div class="section_col">
                         <div class="image_parallelogram">
-                        <img src="<?php echo $winter_photo['sizes']['medium']; ?>" alt="Winter">
-                        <div class="shadow_1"></div>
-                        <div class="shadow_2"></div>
+                            <div class="image_image" style="background-image:url(<?php echo $winter_photo['sizes']['medium']; ?>)"></div>
+                            <div class="shadow_1"></div>
+                            <div class="shadow_2"></div>
                         </div>
                     </div>
 
@@ -77,9 +79,9 @@
                     </div>
                     <div class="section_col">
                         <div class="image_parallelogram">
-                        <img src="<?php echo $summer_photo['sizes']['medium']; ?>" alt="Winter">
-                        <div class="shadow_1"></div>
-                        <div class="shadow_2"></div>
+                            <div class="image_image" style="background-image:url(<?php echo $summer_photo['sizes']['medium']; ?>)"></div>
+                            <div class="shadow_1"></div>
+                            <div class="shadow_2"></div>
                         </div>
                     </div>
 
@@ -91,8 +93,10 @@
 
         <?php $programme_big_picture  = get_field('programme_big_picture'); ?>
         <?php if ($programme_big_picture): ?>
-        <section class="section_big_picture section_big_picture_flipped" style="background-image:url(<?php echo $programme_big_picture['sizes']['large']; ?>);">
-        </section>
+            <section class="section_big_picture section_big_picture_flipped" style="background-image:url(<?php echo $programme_big_picture['sizes']['large']; ?>);">
+                <div class="white_bar"></div>
+                <div class="white_bar white_bar_2"></div>
+            </section>
         <?php endif; ?>
 
 
@@ -116,7 +120,7 @@
                         <div class="section_col">
                             <div id="map_container"></div>
                             <script>
-                                var map_location = {lat: 46.2984563, lng: 7.0375038, title: 'Chalet Agate'};
+                            var map_location = {lat: 46.2984563, lng: 7.0375038, title: 'Chalet Agate'};
                             </script>
                         </div>
 

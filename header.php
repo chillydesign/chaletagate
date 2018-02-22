@@ -50,6 +50,7 @@
 
             <div id="header_image" style="background-image:url(<?php echo $header_image['sizes']['large']; ?>)"></div>
             <div id="header_colour" class="header_colour_<?php echo $header_colour; ?>"></div>
+            <div id="header_mask"></div>
 
         </header>
 

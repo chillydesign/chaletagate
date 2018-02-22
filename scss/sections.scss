@@ -31,18 +31,49 @@ section {
     &.section_big_picture {
         background: no-repeat bottom center ;
         background-size: cover;
-        min-height: 350px;
-        margin: 0 15px 50px;
+        position: relative;
+        min-height: 450px;
+        margin: 0 0 50px;
+        overflow: hidden;
+        clip-path: polygon(0 #{$page_diagonal /2}, 100% 0%, 100% #{100% - ($page_diagonal /2) }, 0% 100%);
+
+
+        &.section_big_picture_flipped {
+            clip-path: polygon(0 0, 100% #{$page_diagonal /2}, 100% 100%, 0 #{100% - ($page_diagonal /2) });
+        }
+
 
 
         @media (min-width: 768px) {
             min-height: 650px;
-            margin: 0 0 50px;
+
             background-attachment: fixed;
             clip-path: polygon(0 $page_diagonal, 100% 0%, 100% #{100% - $page_diagonal}, 0% 100%);
 
+
+            .white_bar {
+                width: 100%;
+                height: 300px;
+                background: transparentize(white, 0.5);
+                position: absolute;
+                top:0;
+                left: 0;
+                clip-path: polygon(0 0, 100% 0, 100% #{$page_diagonal -  16%} , 0 #{$page_diagonal + 33%} );
+                &.white_bar_2 {
+                        clip-path: polygon(0 0, 100% 0, 100% #{$page_diagonal -  20%} , 0 #{$page_diagonal + 33%} );
+                }
+
+            }
+
             &.section_big_picture_flipped {
                 clip-path: polygon(0 0, 100% $page_diagonal, 100% 100%, 0 #{100% - $page_diagonal});
+
+                .white_bar {
+                    clip-path: polygon(0 0, 100% 0, 100% #{$page_diagonal + 33%} , 0 #{$page_diagonal - 16%} );
+                    &.white_bar_2 {
+                            clip-path: polygon(0 0, 100% 0, 100% #{$page_diagonal + 33%} , 0 #{$page_diagonal - 20%} );
+                    }
+                }
             }
 
         }
@@ -80,6 +111,13 @@ $parralel_amount: 20%;
             height: auto;
         }
 
+        .image_image {
+            background: no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            width: 100%;
+        }
+
         @media (min-width: 768px) {
             width: #{100% / 2};
             min-width: #{100% / 2};
@@ -88,7 +126,8 @@ $parralel_amount: 20%;
 
             .image_parallelogram {
                 position: relative;
-                img, .shadow_1, .shadow_2 {
+
+                .image_image, .shadow_1, .shadow_2 {
                     clip-path: polygon(0 $parralel_amount, 100% 0, 100% 100%, 0 #{100% - $parralel_amount}  );
                     position: relative;
                     z-index: 2;
@@ -120,7 +159,7 @@ $parralel_amount: 20%;
             text-align: left;
 
             .section_col {
-                img, .shadow_1, .shadow_2 {
+                .image_image, .shadow_1, .shadow_2 {
                     clip-path: polygon(0 0, 100% $parralel_amount, 100% #{100% - $parralel_amount} , 0 100%);
                 }
                 .shadow_1, .shadow_2 {

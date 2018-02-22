@@ -6,6 +6,7 @@ header#page_header {
     background: transparent;
     margin: 0 0 40px;
     position: relative;
+    padding-bottom: 50px;
     overflow: hidden;
 
     nav {
@@ -131,6 +132,20 @@ header#page_header {
         }
         &.header_colour_transparent {
             background: none;
+        }
+    }
+
+    #header_mask {
+        background: url('../img/header_mask.svg') no-repeat bottom center;
+        background-size: 100%;
+        position: absolute;
+        bottom: -3px;
+        left: -3px;
+        width: 101%;
+        height: 300px;
+        z-index: 30;
+        @media (min-width: 768px) {
+            bottom: -9px;
         }
     }
 
