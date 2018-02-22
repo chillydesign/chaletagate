@@ -169,7 +169,7 @@ function add_slug_to_body_class($classes)
 }
 
 
-if (defined(ICL_LANGUAGE_CODE)) {
+if (defined('ICL_LANGUAGE_CODE')) {
     // Add specific CSS class by filter
     add_filter('body_class','my_class_names');
     function my_class_names($classes) {
