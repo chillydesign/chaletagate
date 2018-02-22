@@ -12,7 +12,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="<?php bloginfo('description'); ?>">
-        <!-- <link href="https://fonts.googleapis.com/css?family=Cormorant:700i|Montserrat:300,300i,800,800i" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css?family=Cormorant:700i|Montserrat:300,300i,800,800i" rel="stylesheet">
         <?php wp_head(); ?>
 
 
