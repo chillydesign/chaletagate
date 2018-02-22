@@ -168,17 +168,21 @@ function add_slug_to_body_class($classes)
     return $classes;
 }
 
-// Add specific CSS class by filter
-add_filter('body_class','my_class_names');
-function my_class_names($classes) {
-    // add 'class-name' to the $classes array
-if(ICL_LANGUAGE_CODE == 'en'){
-    $classes[] = 'lang_en';
-}elseif(ICL_LANGUAGE_CODE == 'fr'){
-        $classes[] = 'lang_fr';
-}
-    // return the $classes array
-    return $classes;
+
+if (defined(ICL_LANGUAGE_CODE)) {
+    // Add specific CSS class by filter
+    add_filter('body_class','my_class_names');
+    function my_class_names($classes) {
+        // add 'class-name' to the $classes array
+    if(ICL_LANGUAGE_CODE == 'en'){
+        $classes[] = 'lang_en';
+    } elseif(ICL_LANGUAGE_CODE == 'fr'){
+            $classes[] = 'lang_fr';
+    }
+        // return the $classes array
+        return $classes;
+    }
+
 }
 
 
@@ -576,7 +580,7 @@ function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 
 }
 
-// 
+//
 //
 // function cc_mime_types($mimes) {
 //   $mimes['svg'] = 'image/svg+xml';
