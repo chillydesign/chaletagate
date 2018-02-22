@@ -576,21 +576,16 @@ function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 
 }
 
-
-
-function cc_mime_types($mimes) {
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
-}
-add_filter('upload_mimes', 'cc_mime_types');
-
-
-
-
-
-
-
-include('functions_form.php');
+// 
+//
+// function cc_mime_types($mimes) {
+//   $mimes['svg'] = 'image/svg+xml';
+//   return $mimes;
+// }
+// add_filter('upload_mimes', 'cc_mime_types');
+//
+//
+//
 
 
 
