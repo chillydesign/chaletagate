@@ -40,9 +40,12 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
         //MASONRY GALLERY
         var grid = document.querySelector('.masonry_gallery');
-        var msnry = new Masonry( grid, {
-          itemSelector: '.grid_item'
-        });
+        setTimeout( function(){
+            var msnry = new Masonry( grid, {
+              itemSelector: '.grid_item'
+            });
+        }, 500 );
+
         //END OF MASONRY GALLERY
 
 

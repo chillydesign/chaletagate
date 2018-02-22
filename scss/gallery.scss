@@ -2,6 +2,8 @@
 
 .masonry_gallery {
     margin: 0 -20px 30px;
+    padding: 0;
+    list-style: none;
     .grid_item  {
         width: #{100% / 2};
 
