@@ -27,7 +27,7 @@
 
         <header id="page_header"  >
             <a href="#" id="menu_button" >Menu</a>
-            <div id="mobile_branding" class=" branding"><a href="#" ><?php echo $blog_name; ?></a></div>
+            <div id="mobile_branding" class=" branding"><a href="<?php echo home_url(); ?>" ><?php echo $blog_name; ?></a></div>
             <nav class="">
                 <div class="container">
                 <ul>
