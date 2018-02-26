@@ -38,7 +38,7 @@
             <div class="container">
             <div class="header_text">
                 <?php if (is_front_page()) : ?>
-                <h5>bienvenue au</h5>
+                <h5>bienvenue à la</h5>
                 <h1><?php echo $blog_name; ?></h1>
                 <p><?php echo $welcome_paragraph; ?></p>
                 <p><a href="#" class="button button_white">Réserver</a></p>
