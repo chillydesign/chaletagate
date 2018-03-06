@@ -592,6 +592,24 @@ function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 //
 
 
+function map_location_to_json($locations) {
+
+    $jsons = array();
+    foreach ($locations as $location) :
+        $obj = new stdClass();
+        $obj->description = trim($location['description']);
+        $obj->lat = $location['latitude'];
+        $obj->lng = $location['longitude'];
+        $obj->category = trim($location['category']);
+
+        array_push($jsons,  json_encode( $obj) );
+    endforeach;
+
+
+    echo  '[' . implode(',' , $jsons) . ']';
+
+
+}
 
 
 

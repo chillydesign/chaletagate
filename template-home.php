@@ -120,7 +120,7 @@
                         <div class="programme_col">
                             <div id="map_container"></div>
                             <script>
-                            var map_location = {lat: 46.2984563, lng: 7.0375038, title: 'Chalet Agate'};
+                            var single_map_location = {lat: 46.2984563, lng: 7.0375038, title: 'Chalet Agate'};
                             </script>
                         </div>
 

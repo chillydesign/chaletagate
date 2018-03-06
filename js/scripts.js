@@ -40,11 +40,13 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
         //MASONRY GALLERY
         var grid = document.querySelector('.masonry_gallery');
-        setTimeout( function(){
-            var msnry = new Masonry( grid, {
-              itemSelector: '.grid_item'
-            });
-        }, 500 );
+        if (grid)  {
+            setTimeout( function(){
+                var msnry = new Masonry( grid, {
+                    itemSelector: '.grid_item'
+                });
+            }, 500 );
+        }
 
         //END OF MASONRY GALLERY
 
@@ -73,7 +75,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
         // MAP
         // MEMBERS MAP
-        if (typeof map_location != 'undefined') {
+        if (typeof single_map_location != 'undefined') {
 
             var map_theme = [{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF"}]}];
 
@@ -94,7 +96,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             })
 
             var location_map = new google.maps.Map(location_map_container.get(0), map_options);
-            var latlng = new google.maps.LatLng(  map_location.lat, map_location.lng   );
+            var latlng = new google.maps.LatLng(  single_map_location.lat, single_map_location.lng   );
             var infowindow = new google.maps.InfoWindow({content: ''});
             var marker = new google.maps.Marker({
                 position: latlng,
@@ -103,7 +105,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             });
 
             marker.addListener('click', function(){
-                infowindow.setContent( map_location.title );
+                infowindow.setContent( single_map_location.title );
                 infowindow.open(location_map, this);
             })
 
@@ -117,6 +119,182 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
 
 
+
+
+        // BIG MAP
+        if (typeof multi_locations !== 'undefined') {
+
+
+            var  map = new google.maps.Map(document.getElementById('map'), {
+                // center: {lat: latitude , lng: longitude  },
+                // zoom: 13,
+                scrollwheel: false,
+                draggable: !("ontouchend" in document),
+                styles: [{featureType:"all",stylers:[{saturation:-80}]},{featureType:"road.arterial",elementType:"geometry",stylers:[{hue:"#00ffee"},{saturation:50}]},{featureType:"road.arterial",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"road.highway",elementType:"labels",stylers:[{visibility:"off"}]},{featureType:"poi.business",elementType:"labels",stylers:[{visibility:"off"}]}]
+            });
+
+
+
+
+            map.addListener('click', function() {
+                $('.mapsidebar').hide();
+            });
+
+
+
+
+            var iconBase = icon_map_base;
+            var icons = {
+                bibliotheque: {
+                    icon: {
+                        url: iconBase + 'icone_bibliotheque_bleu.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                },
+                centreloisirs: {
+                    icon: {
+                        url: iconBase + 'icone_centreloisirs_bleu.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                },
+                commerce: {
+                    icon: {
+                        url: iconBase + 'icone_commerce_bleu.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                },
+                ecole: {
+                    icon: {
+                        url: iconBase + 'icone_ecole_bleu.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                },
+                parc: {
+                    icon: {
+                        url: iconBase + 'icone_jardin_bleu.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                },
+                parking: {
+                    icon: {
+                        url: iconBase + 'icone_parking_bleu.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                },
+                pharmacie: {
+                    icon: {
+                        url: iconBase + 'icone_pharmacie_bleu.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                },
+                sport: {
+                    icon: {
+                        url: iconBase + 'icone_sport_bleu.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                },
+                transport: {
+                    icon: {
+                        url: iconBase + 'icone_transport_bleu.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                },
+                projet: {
+                    icon: {
+                        url: iconBase + 'icone_projet_etoile.png',// url
+                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        origin: new google.maps.Point(0,0), // origin
+                        anchor: new google.maps.Point(15, 15) // anchor
+                    }
+                }
+            }
+
+
+
+            var infowindow = new google.maps.InfoWindow;
+            var marker, i;
+            var markers = [];
+
+            for (var i = 0; i < multi_locations.length; i++) {
+                var location = multi_locations[i];
+                var latlng = new google.maps.LatLng(  location.lat , location.lng  );
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    category:location.category,
+                    content: location.description
+                });
+
+
+
+                google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                    return function() {
+                        jQuery('#markercontent').html(marker.content);
+                        jQuery('.mapsidebar').show();
+                    }
+                })(marker, i));
+
+                markers.push(marker);
+            }
+
+
+            fitBoundToVisible(markers, map);
+
+
+
+        } // END OF BIG MAP
+
+
+        $('.change_category_link').on('click', function(e) {
+            var $this = $(this);
+            var $category = $this.data('category');
+            $this.toggleClass('unselected_cat');
+            toggleCategory($category);
+            console.log(markers);
+            fitBoundToVisible(markers, map);
+        })
+
+        function fitBoundToVisible(markers, map) {
+            var map_bounds = new google.maps.LatLngBounds();
+
+            for (var m = 0; m < markers.length; m++) {
+                var marker = markers[m];
+                if (marker.visible) {
+                    map_bounds.extend(marker.position);
+                }
+            }
+
+            map.fitBounds(map_bounds);
+
+        }
+
+
+        function toggleCategory( category) {
+            for (var i = 0; i < markers.length; i++) {
+                marker = markers[i];
+                if (marker.category == category) {
+                    marker.setVisible(   !marker.visible   ); // if visible hide, if hidden show.
+                }
+            }
+        }
 
 
 

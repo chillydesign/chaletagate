@@ -1,0 +1,51 @@
+
+.globalmap {
+    height: 400px;
+    position: relative;
+
+    #map {
+        height: 400px;
+    }
+
+
+    .mapsidebar {
+        position: absolute;
+        width: 25%;
+        background: transparentize($dark_grey, 0.2);
+        color: white;
+        padding: 20px;
+        top:0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        overflow-y:scroll;
+         display: none;
+    }
+
+
+}
+
+
+
+
+#markercontent {
+
+}
+
+ul.map_layers_nav {
+    margin: 0;
+    li {
+        display: inline-block;
+        cursor: pointer;
+        margin:0 5px;
+        padding: 10px;
+        transition: all 0.3s;
+        &:hover {
+            background: $light_grey;
+        }
+
+        &.unselected_cat {
+            opacity:0.48;
+        }
+    }
+}
