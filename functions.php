@@ -88,7 +88,7 @@ function webfactor_nav()
 }
 
 function wf_version(){
-  return '0.0.4';
+  return '0.0.5';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -393,7 +393,7 @@ add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove 
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+// add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
@@ -594,6 +594,7 @@ function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 
 function map_location_to_json($locations) {
 
+    $id = 0;
     $jsons = array();
     foreach ($locations as $location) :
         $obj = new stdClass();
@@ -601,7 +602,9 @@ function map_location_to_json($locations) {
         $obj->lat = $location['latitude'];
         $obj->lng = $location['longitude'];
         $obj->category = trim($location['category']);
-
+        $obj->title = trim($location['title']);
+        $obj->id = 'map_' . $id;
+        $id++;
         array_push($jsons,  json_encode( $obj) );
     endforeach;
 

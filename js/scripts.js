@@ -136,45 +136,39 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
 
 
-            map.addListener('click', function() {
-                $('.mapsidebar').hide();
-            });
-
-
-
 
             var iconBase = icon_map_base;
             var icons = {
                 winter: {
 
-                        url: iconBase + 'winter.png',// url
-                        scaledSize: new google.maps.Size(30, 41), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 20) // anchor
+                    url: iconBase + 'winter.png',// url
+                    scaledSize: new google.maps.Size(30, 41), // scaled size
+                    origin: new google.maps.Point(0,0), // origin
+                    anchor: new google.maps.Point(15, 20) // anchor
 
                 },
                 summer: {
 
-                        url: iconBase + 'summer.png',// url
-                        scaledSize: new google.maps.Size(30, 41), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 20) // anchor
+                    url: iconBase + 'summer.png',// url
+                    scaledSize: new google.maps.Size(30, 41), // scaled size
+                    origin: new google.maps.Point(0,0), // origin
+                    anchor: new google.maps.Point(15, 20) // anchor
 
                 },
                 amenites: {
 
-                        url: iconBase + 'amenites.png',// url
-                        scaledSize: new google.maps.Size(30, 41), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 20) // anchor
+                    url: iconBase + 'amenites.png',// url
+                    scaledSize: new google.maps.Size(30, 41), // scaled size
+                    origin: new google.maps.Point(0,0), // origin
+                    anchor: new google.maps.Point(15, 20) // anchor
 
                 },
                 residence: {
 
-                        url: iconBase + 'residence.png',// url
-                        scaledSize: new google.maps.Size(30, 41), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 20) // anchor
+                    url: iconBase + 'residence.png',// url
+                    scaledSize: new google.maps.Size(30, 41), // scaled size
+                    origin: new google.maps.Point(0,0), // origin
+                    anchor: new google.maps.Point(15, 20) // anchor
 
                 }
             }
@@ -192,6 +186,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
                     position: latlng,
                     icon: icons[ location.category ],
                     map: map,
+                    id: location.id,
                     category:location.category,
                     content: location.description
                 });
@@ -200,6 +195,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
+                        console.log(marker);
                         jQuery('#markercontent').html(marker.content);
                         jQuery('.mapsidebar').show();
                     }
@@ -213,6 +209,14 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
 
 
+
+
+            map.addListener('click', function() {
+                $('.mapsidebar').hide();
+            });
+
+
+
         } // END OF BIG MAP
 
 
@@ -221,9 +225,25 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             var $category = $this.data('category');
             $this.toggleClass('unselected_cat');
             toggleCategory($category);
-            console.log(markers);
             fitBoundToVisible(markers, map);
-        })
+        });
+
+        $('.move_map_link').on('click', function(e) {
+            var $this = $(this);
+            var $markerid = $this.data('markerid');
+            for (var i = 0; i < markers.length; i++) {
+                var marker = markers[i];
+                if (marker.id == $markerid) {
+                    moveCenterOfMap(marker.position, map)
+                }
+            }
+        });
+
+
+        function moveCenterOfMap(location, map) {
+            map.panTo(location);
+        }
+
 
         function fitBoundToVisible(markers, map) {
             var map_bounds = new google.maps.LatLngBounds();
