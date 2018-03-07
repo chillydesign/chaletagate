@@ -144,7 +144,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
                     url: iconBase + 'winter.png',// url
                     scaledSize: new google.maps.Size(30, 41), // scaled size
                     origin: new google.maps.Point(0,0), // origin
-                    anchor: new google.maps.Point(15, 20) // anchor
+                    anchor: new google.maps.Point(15, 41) // anchor
 
                 },
                 summer: {
@@ -152,7 +152,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
                     url: iconBase + 'summer.png',// url
                     scaledSize: new google.maps.Size(30, 41), // scaled size
                     origin: new google.maps.Point(0,0), // origin
-                    anchor: new google.maps.Point(15, 20) // anchor
+                    anchor: new google.maps.Point(15, 41) // anchor
 
                 },
                 amenites: {
@@ -160,7 +160,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
                     url: iconBase + 'amenites.png',// url
                     scaledSize: new google.maps.Size(30, 41), // scaled size
                     origin: new google.maps.Point(0,0), // origin
-                    anchor: new google.maps.Point(15, 20) // anchor
+                    anchor: new google.maps.Point(15, 41) // anchor
 
                 },
                 residence: {
@@ -168,7 +168,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
                     url: iconBase + 'residence.png',// url
                     scaledSize: new google.maps.Size(30, 41), // scaled size
                     origin: new google.maps.Point(0,0), // origin
-                    anchor: new google.maps.Point(15, 20) // anchor
+                    anchor: new google.maps.Point(15, 41) // anchor
 
                 }
             }
