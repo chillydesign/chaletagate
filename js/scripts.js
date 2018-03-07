@@ -213,6 +213,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
             map.addListener('click', function() {
                 $('.mapsidebar').hide();
+                fitBoundToVisible(markers, map);
             });
 
 
@@ -234,13 +235,19 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             for (var i = 0; i < markers.length; i++) {
                 var marker = markers[i];
                 if (marker.id == $markerid) {
-                    moveCenterOfMap(marker.position, map)
+                    moveCenterOfMap(marker.position, map);
+                    google.maps.event.trigger(marker, 'click', {
+                        //
+                    });
                 }
             }
         });
 
 
         function moveCenterOfMap(location, map) {
+            if (map.zoom < 15) {
+                map.setZoom(15);
+            }
             map.panTo(location);
         }
 
