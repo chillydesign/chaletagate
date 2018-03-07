@@ -245,8 +245,8 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
 
         function moveCenterOfMap(location, map) {
-            if (map.zoom < 15) {
-                map.setZoom(15);
+            if (map.zoom < 16) {
+                map.setZoom(16);
             }
             map.panTo(location);
         }
