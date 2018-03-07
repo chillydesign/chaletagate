@@ -145,81 +145,33 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
             var iconBase = icon_map_base;
             var icons = {
-                bibliotheque: {
+                winter: {
                     icon: {
-                        url: iconBase + 'icone_bibliotheque_bleu.png',// url
+                        url: iconBase + 'winter.png',// url
                         scaledSize: new google.maps.Size(30, 30), // scaled size
                         origin: new google.maps.Point(0,0), // origin
                         anchor: new google.maps.Point(15, 15) // anchor
                     }
                 },
-                centreloisirs: {
+                summer: {
                     icon: {
-                        url: iconBase + 'icone_centreloisirs_bleu.png',// url
+                        url: iconBase + 'summer.png',// url
                         scaledSize: new google.maps.Size(30, 30), // scaled size
                         origin: new google.maps.Point(0,0), // origin
                         anchor: new google.maps.Point(15, 15) // anchor
                     }
                 },
-                commerce: {
+                amenites: {
                     icon: {
-                        url: iconBase + 'icone_commerce_bleu.png',// url
+                        url: iconBase + 'amenites.png',// url
                         scaledSize: new google.maps.Size(30, 30), // scaled size
                         origin: new google.maps.Point(0,0), // origin
                         anchor: new google.maps.Point(15, 15) // anchor
                     }
                 },
-                ecole: {
+                residence: {
                     icon: {
-                        url: iconBase + 'icone_ecole_bleu.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 15) // anchor
-                    }
-                },
-                parc: {
-                    icon: {
-                        url: iconBase + 'icone_jardin_bleu.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 15) // anchor
-                    }
-                },
-                parking: {
-                    icon: {
-                        url: iconBase + 'icone_parking_bleu.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 15) // anchor
-                    }
-                },
-                pharmacie: {
-                    icon: {
-                        url: iconBase + 'icone_pharmacie_bleu.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 15) // anchor
-                    }
-                },
-                sport: {
-                    icon: {
-                        url: iconBase + 'icone_sport_bleu.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 15) // anchor
-                    }
-                },
-                transport: {
-                    icon: {
-                        url: iconBase + 'icone_transport_bleu.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
-                        origin: new google.maps.Point(0,0), // origin
-                        anchor: new google.maps.Point(15, 15) // anchor
-                    }
-                },
-                projet: {
-                    icon: {
-                        url: iconBase + 'icone_projet_etoile.png',// url
+                        url: iconBase + 'residence.png',// url
                         scaledSize: new google.maps.Size(30, 30), // scaled size
                         origin: new google.maps.Point(0,0), // origin
                         anchor: new google.maps.Point(15, 15) // anchor
@@ -238,6 +190,7 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
                 var latlng = new google.maps.LatLng(  location.lat , location.lng  );
                 var marker = new google.maps.Marker({
                     position: latlng,
+                    icon: icons[ location.category ],
                     map: map,
                     category:location.category,
                     content: location.description
