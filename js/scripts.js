@@ -195,7 +195,6 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
 
                 google.maps.event.addListener(marker, 'click', (function(marker, i) {
                     return function() {
-                        console.log(marker);
                         jQuery('#markercontent').html(marker.content);
                         jQuery('.mapsidebar').show();
                     }
@@ -242,6 +241,10 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
                 }
             }
         });
+        $('.mapsidebar').on('click', function(e) {
+            $(this).hide();
+        });
+
 
 
         function moveCenterOfMap(location, map) {

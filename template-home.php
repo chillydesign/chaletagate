@@ -62,7 +62,7 @@
                         <p><a href="#" class="button ">Toutes les activités >></a></p>
                     </div>
                     <div class="programme_col">
-                        <div class="image_parallelogram">
+                        <div class="image_parallelogram image_parallelogram_flipped">
                             <div class="image_image" style="background-image:url(<?php echo $winter_photo['sizes']['medium']; ?>)"></div>
                             <div class="shadow_1"></div>
                             <div class="shadow_2"></div>
@@ -105,22 +105,20 @@
             <div class="container">
                 <h5>Votre séjour?</h5>
                 <h2>Nous trouver</h2>
+                <?php $contact_content  = get_field('contact_content'); ?>
+
 
                 <div class="programme_row programme_row_flip">
                     <div class="programme_col">
                         <h3>Chalet agate 17</h3>
-                        <p>Domaine de Roche Grise - Immeuble Agate  <br/>
-                            Appartement 17 - 1er étage <br/>
-                            1884 Villars-sur-Ollon<br/>
-                            <a href="#">Plan d’accès  </a></p>
-
-                            <p><a href="#" class="button">Réserver votre séjour</a></p>
+                        <?php echo $contact_content; ?>
+                        <p><a href="#" class="button">Réserver votre séjour</a></p>
 
                         </div>
                         <div class="programme_col">
                             <div id="map_container"></div>
                             <script>
-                            var single_map_location = {lat: 46.2984563, lng: 7.0375038, title: 'Chalet Agate'};
+                            var single_map_location = {lat: 46.2947944, lng: 7.0623332, title: 'Chalet Agate'};
                             </script>
                         </div>
 

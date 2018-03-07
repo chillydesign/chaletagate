@@ -10,7 +10,7 @@
 
     .mapsidebar {
         position: absolute;
-        width: 25%;
+        width: 80%;
         background: transparentize($dark_grey, 0.2);
         color: white;
         padding: 20px;
@@ -19,7 +19,15 @@
         bottom: 0;
         height: 100%;
         overflow-y:scroll;
-         display: none;
+        display: none;
+
+        @media (min-width: 768px) {
+            width: 50%;
+        }
+
+        @media (min-width: 1024px) {
+            width: 25%;
+        }
     }
 
 
@@ -38,6 +46,7 @@ ul.map_layers_nav {
         display: inline-block;
         cursor: pointer;
         margin:0 5px;
+        text-transform: uppercase;
         padding: 10px;
         transition: all 0.3s;
         &:hover {

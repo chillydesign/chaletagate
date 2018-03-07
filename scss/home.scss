@@ -34,6 +34,7 @@ $parralel_amount: 20%;
 
 
 
+
     .programme_col {
         flex: 1 auto 0;
         padding: 0 0;
@@ -46,37 +47,58 @@ $parralel_amount: 20%;
 
         .image_parallelogram {
             position: relative;
-        }
 
-        .image_image {
-            background: no-repeat center center;
-            background-size: cover;
+            .image_image {
+                background: no-repeat center center;
+                background-size: cover;
 
 
-        }
-
-        .image_image, .shadow_1, .shadow_2 {
-            clip-path: polygon(0 $parralel_amount, 100% 0, 100% 100%, 0 #{100% - $parralel_amount}  );
-            position: relative;
-            z-index: 2;
-            height: 400px;
-            width: 80%;
-            margin: 0 15% 0 5%;
-        }
-        .shadow_1, .shadow_2 {
-            position: absolute;
-            top: #{$shadow_distance * -1};
-            left: $shadow_distance;
-
-            height: 100%;
-            background: $brand_color;
-            opacity: 0.1;
-            z-index: 1;
-            &.shadow_2 {
-                top: #{$shadow_distance * -2};
-                left: #{$shadow_distance * 2};
             }
+
+            .image_image, .shadow_1, .shadow_2 {
+                clip-path: polygon(0 $parralel_amount, 100% 0, 100% 100%, 0 #{100% - $parralel_amount}  );
+                position: relative;
+                z-index: 2;
+                height: 400px;
+                width: 80%;
+                margin: 0 15% 0 5%;
+            }
+            .shadow_1, .shadow_2 {
+                position: absolute;
+                top: #{$shadow_distance * -1};
+                left: $shadow_distance;
+
+                height: 100%;
+                background: $brand_color;
+                opacity: 0.1;
+                z-index: 1;
+                &.shadow_2 {
+                    top: #{$shadow_distance * -2};
+                    left: #{$shadow_distance * 2};
+                }
+            }
+
+
+            &.image_parallelogram_flipped {
+                .image_image, .shadow_1, .shadow_2 {
+                    clip-path: polygon(0 0, 100% $parralel_amount, 100% #{100% - $parralel_amount} , 0 100%);
+                    margin: 0 5% 0 15%;
+                }
+                .shadow_1, .shadow_2 {
+                    top: #{$shadow_distance * -1};
+                    left: #{$shadow_distance * -1};
+
+                    &.shadow_2 {
+                        top: #{$shadow_distance * -2};
+                        left: #{$shadow_distance * -2};
+                    }
+                }
+            }
+
+
+
         }
+
 
 
 
@@ -96,37 +118,24 @@ $parralel_amount: 20%;
     }
 
 
-    &.programme_row_flip {
+    //    &.programme_row_flip {     }
 
 
-        .programme_col {
-            .image_image, .shadow_1, .shadow_2 {
-                clip-path: polygon(0 0, 100% $parralel_amount, 100% #{100% - $parralel_amount} , 0 100%);
-                margin: 0 5% 0 15%;
-            }
-            .shadow_1, .shadow_2 {
-                top: #{$shadow_distance * -1};
-                left: #{$shadow_distance * -1};
 
-                &.shadow_2 {
-                    top: #{$shadow_distance * -2};
-                    left: #{$shadow_distance * -2};
-                }
-            }
-        }
-    }
+
 
 
 
     @media (min-width: 768px) {
         text-align: right;
-        &.programme_row_flip {
+
+        &.programme_row_flip,  {
             text-align: left;
 
             .programme_col {
                 .image_image, .shadow_1, .shadow_2 {
-                    width: 100%;
-                    margin: 0;
+                //    width: 100%;
+                //    margin: 0;
                 }
             }
 
@@ -139,6 +148,27 @@ $parralel_amount: 20%;
 }
 
 
+
+.programme_col_content {
+    text-align: center;
+    padding: 0 20px;
+    h2, h3 {
+        padding: 10px 0 20px;
+    }
+    ul, ol {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+            flex: 1 auto 0;
+            list-style: none;
+            margin:0 5px;
+            padding: 0 10px 10px;
+
+        }
+    }
+}
 
 
 #location_section {
