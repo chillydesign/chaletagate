@@ -146,36 +146,36 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             var iconBase = icon_map_base;
             var icons = {
                 winter: {
-                    icon: {
+
                         url: iconBase + 'winter.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        scaledSize: new google.maps.Size(30, 41), // scaled size
                         origin: new google.maps.Point(0,0), // origin
                         anchor: new google.maps.Point(15, 15) // anchor
-                    }
+
                 },
                 summer: {
-                    icon: {
+
                         url: iconBase + 'summer.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        scaledSize: new google.maps.Size(30, 41), // scaled size
                         origin: new google.maps.Point(0,0), // origin
                         anchor: new google.maps.Point(15, 15) // anchor
-                    }
+
                 },
                 amenites: {
-                    icon: {
+
                         url: iconBase + 'amenites.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        scaledSize: new google.maps.Size(30, 41), // scaled size
                         origin: new google.maps.Point(0,0), // origin
                         anchor: new google.maps.Point(15, 15) // anchor
-                    }
+
                 },
                 residence: {
-                    icon: {
+
                         url: iconBase + 'residence.png',// url
-                        scaledSize: new google.maps.Size(30, 30), // scaled size
+                        scaledSize: new google.maps.Size(30, 41), // scaled size
                         origin: new google.maps.Point(0,0), // origin
                         anchor: new google.maps.Point(15, 15) // anchor
-                    }
+
                 }
             }
 
