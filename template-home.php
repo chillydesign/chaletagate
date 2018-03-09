@@ -19,8 +19,11 @@
                 <div class="carousel">
                     <?php foreach ($appartment_gallery as $gallery_image)  : ?>
                         <div class="carousel-cell">
-                            <img src="<?php echo $gallery_image['sizes']['small']; ?>"  srcset="<?php echo $gallery_image['sizes']['medium']; ?> 1000w, <?php echo $gallery_image['sizes']['large']; ?> 2000w"   sizes="100vw" alt="<?php echo $gallery_image['title']; ?>" />
+                            <a data-featherlight="image"  title="<?php echo $gallery_image['title']; ?>" class="gallery"  href="<?php echo  $gallery_image['sizes']['large']; ?>">
+                                <div class="carousel_image" style="background-image:url(<?php echo $gallery_image['sizes']['medium'] ; ?> );" ></div>
+                            </a>
                         </div>
+
                     <?php endforeach; ?>
                 </div>
 

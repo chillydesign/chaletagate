@@ -1,5 +1,9 @@
 @import "../node_modules/featherlight/release/featherlight.min";
 
+a.gallery {
+    border: 0;   
+}
+
 .masonry_gallery {
     margin: 0 -20px 30px;
     padding: 0;

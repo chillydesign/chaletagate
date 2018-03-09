@@ -5,7 +5,9 @@
 <div class="carousel">
     <?php foreach ($images as $image)  : ?>
         <div class="carousel-cell">
-            <img src="<?php echo $image['sizes']['small']; ?>"  srcset="<?php echo $image['sizes']['medium']; ?> 1000w, <?php echo $image['sizes']['large']; ?> 2000w"   sizes="100vw" alt="<?php echo $image['title']; ?>" />
+            <a data-featherlight="image"  title="<?php echo $image['title']; ?>"  class="gallery"  href="<?php echo  $image['sizes']['large']; ?>">
+                <div class="carousel_image" style="background-image:url(<?php echo $image['sizes']['medium'] ; ?> );" ></div>
+            </a>
         </div>
     <?php endforeach; ?>
 </div>
