@@ -43,6 +43,8 @@ header#page_header {
             padding: 30px 0 0;
 
 
+
+
             @media (min-width: 768px) {
                 display: flex;
                 flex-wrap: wrap;
@@ -58,6 +60,7 @@ header#page_header {
                 margin: 0;
                 text-transform: lowercase;
                 text-align: left;
+                position: relative;
 
                 &.branding {
                     display: none;
@@ -101,6 +104,65 @@ header#page_header {
                         background-color: transparentize(white, 0.8);
                     }
                 } // END OF A
+
+
+
+                ul.sub-menu {
+
+                    margin: 0;
+                    padding: 0;
+
+                    @media (min-width: 768px) {
+
+                        display: none;
+                        position: absolute;
+                        top: 40px;
+                        right: 0;
+                        z-index: 1000;
+                        width: 150px;
+
+                        li {
+                            background: none;
+                            text-align: right;
+                            color: white;
+                            padding: 0;
+                            margin: 0;
+                            display: block;
+                            width: 100%;
+                            border-bottom: 1px solid lighten($dark_grey, 5);
+
+                            a {
+                                color: white;
+                                padding: 10px;
+                                display: block;
+                                background: $dark_grey;
+
+                                &:hover {
+                                    background: lighten($dark_grey, 10);
+                                }
+                            } // end of submenu li a
+                        } // end of submenu li
+
+
+
+                    } // END OF ONLY FOR NOT MOBILE
+
+                }// END OF SUB-MENU
+
+
+
+
+                @media (min-width: 768px) {
+                    &:hover {
+                        ul.sub-menu {
+                            display: block;
+                        }
+                    }
+
+                }
+
+
+
             } // END OF LI
         } // END OF UL
     } // END OF NAV
