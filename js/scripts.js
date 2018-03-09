@@ -274,9 +274,22 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             for (var i = 0; i < markers.length; i++) {
                 marker = markers[i];
                 if (marker.category == category) {
-                    marker.setVisible(   !marker.visible   ); // if visible hide, if hidden show.
+                    var visibility  =  !marker.visible
+                    marker.setVisible(  visibility   ); // if visible hide, if hidden show.
                 }
             }
+            $('.move_map_link').each(function(){
+                var $link = $(this);
+                var $link_cat = $link.data('category');
+                if ($link_cat == category) {
+                    if (visibility) {
+                        $link.removeClass('link_invisible');
+                    } else {
+                        $link.addClass('link_invisible');
+                    }
+
+                }
+            })
         }
 
 
