@@ -1,10 +1,7 @@
 
 
 <div class="container">
-    <div style="text-align:center">
-        <h5 >Blah blah</h5>
-        <h2 >Activities</h2>
-    </div>
+
     <div class="programme_row  ">
 
         <?php $rr = 0; while ( have_rows('columns') ) : the_row(); ?>

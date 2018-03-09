@@ -11,8 +11,8 @@ foreach( $images as $image ):
     array_push($image_array, $str);
 endforeach;
 
-
-shuffle($image_array);
+// rearrange order randomly
+// shuffle($image_array);
 
 ?>
 
