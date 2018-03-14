@@ -1,18 +1,18 @@
 <?php
 /*
- *  Author: Todd Motto | @toddmotto
- *  URL: webfactor.com | @webfactor
- *  Custom functions, support, custom post types and more.
- */
+*  Author: Todd Motto | @toddmotto
+*  URL: webfactor.com | @webfactor
+*  Custom functions, support, custom post types and more.
+*/
 
 /*------------------------------------*\
-	External Modules/Files
+External Modules/Files
 \*------------------------------------*/
 
 // Load any external files you have here
 
 /*------------------------------------*\
-	Theme Support
+Theme Support
 \*------------------------------------*/
 
 if (!isset($content_width))
@@ -34,61 +34,61 @@ if (function_exists('add_theme_support'))
 
     // Add Support for Custom Backgrounds - Uncomment below if you're going to use
     /*add_theme_support('custom-background', array(
-	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
+    'default-color' => 'FFF',
+    'default-image' => get_template_directory_uri() . '/img/bg.jpg'
+));*/
 
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
-	'header-text'			=> false,
-	'default-text-color'		=> '000',
-	'width'				=> 1000,
-	'height'			=> 198,
-	'random-default'		=> false,
-	'wp-head-callback'		=> $wphead_cb,
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
+// Add Support for Custom Header - Uncomment below if you're going to use
+/*add_theme_support('custom-header', array(
+'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
+'header-text'			=> false,
+'default-text-color'		=> '000',
+'width'				=> 1000,
+'height'			=> 198,
+'random-default'		=> false,
+'wp-head-callback'		=> $wphead_cb,
+'admin-head-callback'		=> $adminhead_cb,
+'admin-preview-callback'	=> $adminpreview_cb
+));*/
 
-    // Enables post and comment RSS feed links to head
-    add_theme_support('automatic-feed-links');
+// Enables post and comment RSS feed links to head
+add_theme_support('automatic-feed-links');
 
-    // Localisation Support
-    load_theme_textdomain('webfactor', get_template_directory() . '/languages');
+// Localisation Support
+load_theme_textdomain('webfactor', get_template_directory() . '/languages');
 }
 
 /*------------------------------------*\
-	Functions
+Functions
 \*------------------------------------*/
 
 // HTML5 Blank navigationh
 function webfactor_nav()
 {
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
+    wp_nav_menu(
+        array(
+            'theme_location'  => 'header-menu',
+            'menu'            => '',
+            'container'       => 'div',
+            'container_class' => 'menu-{menu slug}-container',
+            'container_id'    => '',
+            'menu_class'      => 'menu',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '<ul>%3$s</ul>',
+            'depth'           => 0,
+            'walker'          => ''
+        )
+    );
 }
 
 function wf_version(){
-  return '0.0.9';
+    return '0.0.9';
 }
 
 // Load HTML5 Blank scripts (header.php)
@@ -125,7 +125,7 @@ function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header_nav' => __('Header Menu', 'webfactor'), // Main Navigation
-    //    'header_right_nav' => __('Header Right Menu', 'webfactor'), // Main Navigation
+        //    'header_right_nav' => __('Header Right Menu', 'webfactor'), // Main Navigation
         'footer_liens_utiles' => __('Liens utiles Footer', 'webfactor'), // Sidebar Navigation
         'footer_reservation' => __('Réservation Footer', 'webfactor') // Extra Navigation if needed (duplicate as many as you need!)
     ));
@@ -174,11 +174,11 @@ if (defined('ICL_LANGUAGE_CODE')) {
     add_filter('body_class','my_class_names');
     function my_class_names($classes) {
         // add 'class-name' to the $classes array
-    if(ICL_LANGUAGE_CODE == 'en'){
-        $classes[] = 'lang_en';
-    } elseif(ICL_LANGUAGE_CODE == 'fr'){
+        if(ICL_LANGUAGE_CODE == 'en'){
+            $classes[] = 'lang_en';
+        } elseif(ICL_LANGUAGE_CODE == 'fr'){
             $classes[] = 'lang_fr';
-    }
+        }
         // return the $classes array
         return $classes;
     }
@@ -311,49 +311,49 @@ function enable_threaded_comments()
 // Custom Comments Callback
 function webfactorcomments($comment, $args, $depth)
 {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
+    $GLOBALS['comment'] = $comment;
+    extract($args, EXTR_SKIP);
 
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
-		$add_below = 'comment';
-	} else {
-		$tag = 'li';
-		$add_below = 'div-comment';
-	}
-?>
+    if ( 'div' == $args['style'] ) {
+        $tag = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag = 'li';
+        $add_below = 'div-comment';
+    }
+    ?>
     <!-- heads up: starting < for the html tag (li or div) in the next line: -->
     <<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-	<?php endif; ?>
-	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-	</div>
-<?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
-<?php endif; ?>
+    <?php if ( 'div' != $args['style'] ) : ?>
+        <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+        <?php endif; ?>
+        <div class="comment-author vcard">
+            <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
+            <?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+        </div>
+        <?php if ($comment->comment_approved == '0') : ?>
+            <em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+            <br />
+        <?php endif; ?>
 
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
-	</div>
+        <div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
+            <?php
+            printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
+            ?>
+        </div>
 
-	<?php comment_text() ?>
+        <?php comment_text() ?>
 
-	<div class="reply">
-	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-	</div>
-	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
-	<?php endif; ?>
+        <div class="reply">
+            <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+        </div>
+        <?php if ( 'div' != $args['style'] ) : ?>
+        </div>
+    <?php endif; ?>
 <?php }
 
 /*------------------------------------*\
-	Actions + Filters + ShortCodes
+Actions + Filters + ShortCodes
 \*------------------------------------*/
 
 // Add Actions
@@ -362,7 +362,7 @@ add_action('wp_print_scripts', 'webfactor_conditional_scripts'); // Add Conditio
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'webfactor_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
- // add_action('init', 'create_post_type_application'); // Add our HTML5 Blank Custom Post Type
+// add_action('init', 'create_post_type_application'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -409,7 +409,7 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 // [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
 
 /*------------------------------------*\
-	Custom Post Types
+Custom Post Types
 \*------------------------------------*/
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
@@ -417,7 +417,7 @@ function create_post_type_application()
 {
 
     register_post_type('application', // Register Custom Post Type
-        array(
+    array(
         'labels' => array(
             'name' => __('Application', 'webfactor'), // Rename these to suit
             'singular_name' => __('Application', 'webfactor'),
@@ -445,14 +445,14 @@ function create_post_type_application()
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
         'taxonomies' => array(
-        //    'post_tag',
-        //    'category'
+            //    'post_tag',
+            //    'category'
         ) // Add Category and Post Tags support
     ));
 }
 
 /*------------------------------------*\
-	ShortCode Functions
+ShortCode Functions
 \*------------------------------------*/
 
 // Shortcode Demo with Nested Capability
@@ -473,23 +473,23 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 function chilly_nav($menu){
 
     wp_nav_menu(
-    array(
-        'theme_location'  => $menu,
-        'menu'            => '',
-        'container'       => '',
-        'container_class' => 'menu-{menu slug}-container',
-        'container_id'    => '',
-        'menu_class'      => '',
-        'menu_id'         => '',
-        'echo'            => true,
-        'fallback_cb'     => 'wp_page_menu',
-        'before'          => '',
-        'after'           => '',
-        'link_before'     => '',
-        'link_after'      => '',
-        'items_wrap'      => '%3$s',
-        'depth'           => 0,
-        'walker'          => ''
+        array(
+            'theme_location'  => $menu,
+            'menu'            => '',
+            'container'       => '',
+            'container_class' => 'menu-{menu slug}-container',
+            'container_id'    => '',
+            'menu_class'      => '',
+            'menu_id'         => '',
+            'echo'            => true,
+            'fallback_cb'     => 'wp_page_menu',
+            'before'          => '',
+            'after'           => '',
+            'link_before'     => '',
+            'link_after'      => '',
+            'items_wrap'      => '%3$s',
+            'depth'           => 0,
+            'walker'          => ''
         )
     );
 
@@ -514,17 +514,17 @@ add_shortcode( 'chilly_map', 'chilly_map' );
 
 function disable_wp_emojicons() {
 
-  // all actions related to emojis
-  remove_action( 'admin_print_styles', 'print_emoji_styles' );
-  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-  remove_action( 'wp_print_styles', 'print_emoji_styles' );
-  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+    // all actions related to emojis
+    remove_action( 'admin_print_styles', 'print_emoji_styles' );
+    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+    remove_action( 'wp_print_styles', 'print_emoji_styles' );
+    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
-  // filter to remove TinyMCE emojis
-  // add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
+    // filter to remove TinyMCE emojis
+    // add_filter( 'tiny_mce_plugins', 'disable_emojicons_tinymce' );
 }
 add_action( 'init', 'disable_wp_emojicons' );
 
@@ -544,8 +544,8 @@ function remove_json_api () {
     remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
     // Remove oEmbed-specific JavaScript from the front-end and back-end.
     remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-   // Remove all embeds rewrite rules.
-  // add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+    // Remove all embeds rewrite rules.
+    // add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
 
 }
 add_action( 'after_setup_theme', 'remove_json_api' );
@@ -573,10 +573,10 @@ add_action( 'after_setup_theme', 'remove_json_api' );
 
 function thumbnail_of_post_url( $post_id,  $size='large'  ) {
 
-     $image_id = get_post_thumbnail_id(  $post_id );
-     $image_url = wp_get_attachment_image_src($image_id, $size  );
-     $image = $image_url[0];
-     return $image;
+    $image_id = get_post_thumbnail_id(  $post_id );
+    $image_url = wp_get_attachment_image_src($image_id, $size  );
+    $image = $image_url[0];
+    return $image;
 
 }
 
@@ -613,6 +613,28 @@ function map_location_to_json($locations) {
 
 
 }
+
+
+add_action( 'admin_menu', 'remove_menus' );
+function remove_menus(){
+    if (is_user_logged_in()) {
+        $user = wp_get_current_user();
+        if ($user->user_login !== 'charles' && $user->user_login !== 'lily' && $user->user_login !== 'webfactor'  ) {
+            remove_menu_page( 'index.php' );                  //Dashboard
+            // remove_menu_page( 'edit.php' );                   //Posts
+            //remove_menu_page( 'upload.php' );                 //Media
+            remove_menu_page( 'edit-comments.php' );          //Comments
+            // remove_menu_page( 'themes.php' );                 //Appearance
+            // add_menu_page('Menu', 'Menu', 'manage_sites', 'nav-menus.php' );                 //Appearance
+            remove_menu_page( 'plugins.php' );                //Plugins
+            remove_menu_page( 'users.php' );               //Users
+            //remove_menu_page( 'tools.php' );                  //Tools
+            //remove_menu_page( 'options-general.php' );        //Settings
+            remove_menu_page( 'profile.php' );        //Settings
+        };
+    };
+};  // end of remove_menus;
+
 
 
 

@@ -86,9 +86,11 @@ section {
 
         } // end of 768
 
-            @media (min-width: 1100px) {
-                background-attachment: fixed;
-            }
+
+        // bg fixed cant be on screens any smaller as ipads break with this
+        @media (min-width: 1100px) {
+            background-attachment: fixed;
+        }
 
 
 
