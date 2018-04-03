@@ -41,7 +41,7 @@
                 <h5>bienvenue à la</h5>
                 <h1><?php echo $blog_name; ?></h1>
                 <p><?php echo $welcome_paragraph; ?></p>
-                <p><a href="#" class="button button_white">Réserver</a></p>
+                <!-- <p><a href="<?php //echo get_home_url(); ?>/reservation" class="button button_white"><?php //e('Réserver', 'webfactor)'; ?></a></p> -->
                 <?php else: ?>
                     <h1><?php the_title(); ?></h1>
                 <?php endif; ?>

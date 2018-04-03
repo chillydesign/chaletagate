@@ -108,7 +108,7 @@ a {
     }
 
 
-    &.button {
+    &.button, a h6, h6 a {
         display: block;
         border: 3px solid $brand_color;
         padding: 10px 40px;
@@ -116,9 +116,9 @@ a {
         text-align: center;
         color: $brand_color;
         @media (min-width: 768px) {
-            display: inline-block;
+            display: inline-block; 
         }
-        &.button_white {
+        &.button_white, .header_text a h6, .header_text h6 a {
             border-color: white;
             color: white;
             &:hover {
