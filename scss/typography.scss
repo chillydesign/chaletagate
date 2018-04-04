@@ -116,7 +116,7 @@ a {
         text-align: center;
         color: $brand_color;
         @media (min-width: 768px) {
-            display: inline-block; 
+            display: inline-block;
         }
         &.button_white, .header_text a h6, .header_text h6 a {
             border-color: white;
@@ -130,6 +130,31 @@ a {
     }
 
 }
+
+
+
+a h6, h6 a {
+    display: block;
+    border: 3px solid $brand_color;
+    padding: 10px 40px;
+    margin:10px 0;
+    text-align: center;
+    color: $brand_color;
+    font-size: 1.9em;
+    @media (min-width: 768px) {
+        display: inline-block;
+    }
+
+    }
+  .header_text a h6, .header_text h6 a {
+      border-color: white;
+      color: white;
+      &:hover {
+          background-color: transparentize(white,0.8)
+      }
+  }
+
+
 
 
 
