@@ -62,7 +62,7 @@
                     <div class="programme_col">
                         <h3>L'Hiver</h3>
                         <p><?php echo $winter_paragraph; ?></p>
-                        <p><a href="#" class="button ">Toutes les activités >></a></p>
+                        <a href="#" class="button ">Toutes les activités >></a>
                     </div>
                     <div class="programme_col">
                         <div class="image_parallelogram image_parallelogram_flipped">

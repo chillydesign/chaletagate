@@ -14,6 +14,7 @@
     touch-action: pan-y;
     -webkit-tap-highlight-color: transparent;
     margin: 20px 0 50px;
+    z-index: 5;
 }
 .slick-list {
     position: relative;
@@ -129,6 +130,7 @@
     transform: scaleY(2.2);
     cursor: pointer;
     padding: 5px;
+    z-index: 1000;
 }
 
 
@@ -147,4 +149,10 @@
     background-position: center center;
     height: 200px;
     width: 300px;
+}
+
+.image_image_carousel {
+    .slick-slide {
+            transform: scale(1);
+    }
 }

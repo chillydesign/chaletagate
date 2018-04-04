@@ -70,6 +70,18 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
             autoplay: true,
             autoplaySpeed: 2000
         });
+        $('.image_image_carousel').slick({
+            // options
+            infinite: true,
+            accessibility: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '<div class="slick-prev">&lt;</div>',
+            nextArrow: '<div class="slick-next">&gt;</div>',
+            autoplay: true,
+            autoplaySpeed: 2000,
+            fade: true
+        });
         // END OF CAROUSEL
 
 

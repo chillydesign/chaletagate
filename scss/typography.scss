@@ -107,8 +107,10 @@ a {
         background-color: transparentize($brand_color,0.8)
     }
 
+}
 
-    &.button, a h6, h6 a {
+
+    a.button, a h6, h6 a {
         display: block;
         border: 3px solid $brand_color;
         padding: 10px 40px;
@@ -129,23 +131,9 @@ a {
 
     }
 
-}
 
 
 
-a h6, h6 a {
-    display: block;
-    border: 3px solid $brand_color;
-    padding: 10px 40px;
-    margin:10px 0;
-    text-align: center;
-    color: $brand_color;
-    font-size: 1.9em;
-    @media (min-width: 768px) {
-        display: inline-block;
-    }
-
-    }
   .header_text a h6, .header_text h6 a {
       border-color: white;
       color: white;
@@ -168,7 +156,17 @@ table {
 }
 
 th, td {font-size: 1.5em;padding:10px;border:0}
-section td {font-size: 2em;line-height: 160%;padding:0 0 10px;}
+section td {line-height: 160%;}
+th, thead td {
+    font-weight: bold;
+    border-bottom: 1px solid #f1f1f1
+}
+tr:nth-child(2n) {
+    td {
+        background-color: #f1f1f1;
+
+    }
+}
 
 blockquote {
     padding:20px 0 20px 40px;
