@@ -73,7 +73,7 @@ h5 {
 
 
 
-p { font-size: 1.5em;padding:0 0 30px;line-height: 160%;font-weight:200;  }
+p { font-size: 1.7em;padding:0 0 30px;line-height: 160%;font-weight:200;  }
 li { font-size: 1.5em;padding:0 0 5px;line-height: 160%; font-weight:200; }
 
 
@@ -113,24 +113,22 @@ a {
     a.button, a h6, h6 a {
         display: block;
         border: 3px solid $brand_color;
-        padding: 10px 40px;
+        padding: 13px 40px;
         margin:10px 0;
         text-align: center;
-        color: $brand_color;
+        color: $brand_color!important;
+        font-size: 1.7em;
         @media (min-width: 768px) {
             display: inline-block;
         }
-        &.button_white, .header_text a h6, .header_text h6 a {
-            border-color: white;
-            color: white;
-            &:hover {
-                background-color: transparentize(white,0.8)
-            }
-        }
-
-
     }
-
+    .header_text a h6, .header_text h6 a {
+        border-color: white;
+        color: white!important;
+        &:hover {
+            background-color: transparentize(white,0.8)
+        }
+    }
 
 
 

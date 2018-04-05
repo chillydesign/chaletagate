@@ -29,8 +29,7 @@
 
 
 
-                <p><?php echo $appartment_paragraph; ?></p>
-                <p><a href="#" class="button ">Plus d’informations</a></p>
+                <div><?php echo $appartment_paragraph; ?></div>
             </div>
             <div class="section_background_image" style="background-image:url(<?php echo $appartment_background['sizes']['large']; ?>);"></div>
         </section>
@@ -61,8 +60,7 @@
                 <div class="programme_row programme_row_flip">
                     <div class="programme_col">
                         <h3>L'Hiver</h3>
-                        <p><?php echo $winter_paragraph; ?></p>
-                        <a href="#" class="button ">Toutes les activités >></a>
+                        <div><?php echo $winter_paragraph; ?></div>
                     </div>
                     <div class="programme_col">
                         <div class="image_parallelogram image_parallelogram_flipped">
@@ -77,8 +75,7 @@
                 <div class="programme_row">
                     <div class="programme_col">
                         <h3>L’été</h3>
-                        <p><?php echo $summer_paragraph; ?></p>
-                        <p><a href="#" class="button ">Toutes les activités >></a></p>
+                        <div><?php echo $summer_paragraph; ?></div>
                     </div>
                     <div class="programme_col">
                         <div class="image_parallelogram">
@@ -113,9 +110,7 @@
 
                 <div class="programme_row programme_row_flip">
                     <div class="programme_col">
-                        <h3>Chalet agate 17</h3>
-                        <?php echo $contact_content; ?>
-                        <p><a href="#" class="button">Réserver votre séjour</a></p>
+                        <div><?php echo $contact_content; ?></div>
 
                         </div>
                         <div class="programme_col">
