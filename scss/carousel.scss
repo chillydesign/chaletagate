@@ -140,6 +140,9 @@
     transform: scale(1);
 }
 
+.carousel-cell {
+    width: 100%;
+}
 
 
 .carousel_image {
@@ -148,7 +151,8 @@
     background-color: $light_grey;
     background-position: center center;
     height: 200px;
-    width: 300px;
+    // width: 300px;
+    width: 100%;
 }
 
 .image_image_carousel {
