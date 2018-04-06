@@ -3,5 +3,8 @@
     <section class="section_big_picture" style="background-image:url(<?php echo $image['sizes']['large']; ?>);">
         <div class="white_bar"></div>
         <div class="white_bar white_bar_2"></div>
+        <?php if ( $image['caption'] != '' ): ?>
+            <p class="photo_caption"><?php echo  $image['caption']; ?></p>
+        <?php endif; ?>
     </section>
 <?php endif; ?>

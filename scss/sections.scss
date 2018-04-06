@@ -48,8 +48,28 @@ section {
         clip-path: polygon(0 #{$page_diagonal /2}, 100% 0%, 100% #{100% - ($page_diagonal /2) }, 0% 100%);
 
 
+        p.photo_caption {
+            position: absolute;
+            z-index: 1000;
+            bottom: 17px;
+            left: 11px;
+            font-size: 1.1em;
+            transform: rotate(-9deg);
+            color: white;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+            opacity: 0.8;
+            width: 100%;
+            text-align: left;
+        }
+
         &.section_big_picture_flipped {
             clip-path: polygon(0 0, 100% #{$page_diagonal /2}, 100% 100%, 0 #{100% - ($page_diagonal /2) });
+            p.photo_caption {
+                text-align: right;
+                right: 11px;
+                left: auto;
+                transform: rotate(9deg);
+            }
         }
 
 

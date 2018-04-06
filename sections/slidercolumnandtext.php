@@ -20,11 +20,16 @@
                     <?php foreach ($images as $image)  : ?>
                         <div class="carousel-cell">
                             <div class="carousel_image image_image" style="background-image:url(<?php echo $image['sizes']['medium'] ; ?> );" ></div>
+                            <?php if ( $image['caption'] != '' ): ?>
+                                <p class="photo_caption"><?php echo  $image['caption']; ?></p>
+                            <?php endif; ?>
                         </div>
+
                     <?php endforeach; ?>
                 </div>
                 <div class="shadow_1"></div>
                 <div class="shadow_2"></div>
+
             </div>
         </div>
 

@@ -40,6 +40,9 @@
             <section class="section_big_picture" style="background-image:url(<?php echo $appartment_big_picture['sizes']['large']; ?>);">
                 <div class="white_bar"></div>
                 <div class="white_bar white_bar_2"></div>
+                <?php if ( $appartment_big_picture['caption'] != '' ): ?>
+                    <p class="photo_caption"><?php echo  $appartment_big_picture['caption']; ?></p>
+                <?php endif; ?>
             </section>
         <?php endif; ?>
 
@@ -67,6 +70,9 @@
                             <div class="image_image" style="background-image:url(<?php echo $winter_photo['sizes']['medium']; ?>)"></div>
                             <div class="shadow_1"></div>
                             <div class="shadow_2"></div>
+                            <?php if ( $winter_photo['caption'] != '' ): ?>
+                                <p class="photo_caption"><?php echo  $winter_photo['caption']; ?></p>
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -82,6 +88,9 @@
                             <div class="image_image" style="background-image:url(<?php echo $summer_photo['sizes']['medium']; ?>)"></div>
                             <div class="shadow_1"></div>
                             <div class="shadow_2"></div>
+                            <?php if ( $summer_photo['caption'] != '' ): ?>
+                                <p class="photo_caption"><?php echo  $summer_photo['caption']; ?></p>
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -96,6 +105,9 @@
             <section class="section_big_picture section_big_picture_flipped" style="background-image:url(<?php echo $programme_big_picture['sizes']['large']; ?>);">
                 <div class="white_bar"></div>
                 <div class="white_bar white_bar_2"></div>
+                <?php if ( $programme_big_picture['caption'] != '' ): ?>
+                    <p class="photo_caption"><?php echo  $programme_big_picture['caption']; ?></p>
+                <?php endif; ?>
             </section>
         <?php endif; ?>
 

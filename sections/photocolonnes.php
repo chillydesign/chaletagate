@@ -14,6 +14,9 @@
                     <div class="image_image" style="background-image:url(<?php echo $image['sizes']['medium']; ?>)"></div>
                     <div class="shadow_1"></div>
                     <div class="shadow_2"></div>
+                    <?php if ( $image['caption'] != '' ): ?>
+                        <p class="photo_caption"><?php echo  $image['caption']; ?></p>
+                    <?php endif; ?>
                 </div>
                 <div class="programme_col_content">
                     <?php if ($title): ?> <h3><?php echo $title; ?></h3>  <?php endif; ?>

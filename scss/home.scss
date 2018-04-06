@@ -51,11 +51,24 @@ $parralel_amount: 20%;
         .image_parallelogram {
             position: relative;
 
+            .photo_caption {
+                position: absolute;
+                z-index: 1000;
+                bottom: 17px;
+
+                font-size: 1.1em;
+                color: white;
+                text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+                opacity: 0.8;
+                width: 100%;
+                text-align: right;
+                right: 80px;
+                transform: rotate(9deg);
+            }
+
             .image_image {
                 background: no-repeat center center;
                 background-size: cover;
-
-
             }
 
             .image_image, .shadow_1, .shadow_2 {
@@ -96,6 +109,12 @@ $parralel_amount: 20%;
                         top: #{$shadow_distance * -2};
                         left: #{$shadow_distance * -2};
                     }
+                }
+                .photo_caption {
+                    left: 80px;
+                    right: auto;
+                    transform: rotate(-9deg);
+                    text-align: left;
                 }
             }
 
