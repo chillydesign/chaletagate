@@ -4,7 +4,7 @@
         <div class="white_bar"></div>
         <div class="white_bar white_bar_2"></div>
         <?php if ( $image['caption'] != '' ): ?>
-            <p class="photo_caption"><?php echo  $image['caption']; ?></p>
+            <p class="photo_caption"><span><?php echo  $image['caption']; ?></span></p>
         <?php endif; ?>
     </section>
 <?php endif; ?>

@@ -10,8 +10,7 @@
 <div class="container">
 
     <div class="programme_row <?php echo $row_class; ?>">
-        <div class="programme_col">
-            <br><br><br><br><br><br><br>
+        <div class="programme_col programme_slider_col_content">
             <?php echo $content; ?>
         </div>
         <div class="programme_col">

@@ -51,15 +51,18 @@ section {
         p.photo_caption {
             position: absolute;
             z-index: 1000;
-            bottom: 17px;
-            left: 11px;
+            bottom: 37px;
+            left: -30px;
             font-size: 1.1em;
-            transform: rotate(-9deg);
             color: white;
             text-shadow: 0 1px 1px rgba(0,0,0,0.5);
             opacity: 0.8;
             width: 100%;
             text-align: left;
+            span {
+                display: inline-block;
+                transform: rotate(-90deg);
+            }
         }
 
         &.section_big_picture_flipped {
@@ -158,4 +161,18 @@ section {
         }
     }
 
+}
+
+@media(max-width:767px){
+  section.section_slidercolumnandtext, section.section_photocolonnes {padding-top: 50px;}
+  .programme_slider_col_content {
+    padding: 0 30px!important;
+  }
+  .programme_col_content {
+      padding-top: 25px!important;
+  }
+}
+
+.programme_col.programme_slider_col_content {
+    padding-top: 25px!important;
 }
