@@ -1,6 +1,7 @@
 import slick from '../node_modules/slick-carousel/slick/slick.js';
 import Masonry from '../node_modules/masonry-layout/dist/masonry.pkgd.js';
 import featherlight from '../node_modules/featherlight/release/featherlight.min.js';
+import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
 
 (function ($, root, undefined) {
 
@@ -51,6 +52,17 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
         //END OF MASONRY GALLERY
 
 
+        // lAZY LOAD GALLERY IMAGES
+        $("img.lazy").lazyload({
+
+            load : function(elements_left, settings) {
+                if (msnry) {
+                    msnry.layout();
+                }
+
+            }
+
+        });
 
 
 
