@@ -25,6 +25,7 @@ header#page_header {
         &.visible {
             display: block;
             transform: translateX(0);
+            padding-top: 30px;
 
         }
 
@@ -116,7 +117,7 @@ header#page_header {
 
                         display: none;
                         position: absolute;
-                        top: 40px;
+                        top: 54px;
                         right: 0;
                         z-index: 1000;
                         width: 150px;

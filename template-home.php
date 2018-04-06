@@ -103,7 +103,7 @@
 
         <section id="location_section">
             <div class="container">
-                <h5>Votre séjour?</h5>
+                <h5>Votre séjour</h5>
                 <h2>Nous trouver</h2>
                 <?php $contact_content  = get_field('contact_content'); ?>
 

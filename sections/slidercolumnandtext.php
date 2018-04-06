@@ -11,7 +11,7 @@
 
     <div class="programme_row <?php echo $row_class; ?>">
         <div class="programme_col">
-            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br>
             <?php echo $content; ?>
         </div>
         <div class="programme_col">
