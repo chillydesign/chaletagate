@@ -14,7 +14,12 @@
         <meta name="description" content="<?php bloginfo('description'); ?>">
         <link href="https://fonts.googleapis.com/css?family=Cormorant:700i|Montserrat:300,300i,800,800i" rel="stylesheet">
         <?php wp_head(); ?>
-
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri();?>/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri();?>/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="<?php echo get_template_directory_uri();?>/img/favicon/site.webmanifest">
+        <link rel="mask-icon" href="<?php echo get_template_directory_uri();?>/img/favicon/safari-pinned-tab.svg" color="#181c4c">
+        <meta name="msapplication-TileColor" content="#2b5797">
+        <meta name="theme-color" content="#ffffff">
 
     </head>
     <body <?php body_class(); ?>>
@@ -23,6 +28,8 @@
             <?php $header_image = get_field('image'); ?>
             <?php $header_colour = get_field('colour'); ?>
             <?php $welcome_paragraph = get_field('welcome_paragraph'); ?>
+            <?php $title = get_field('welcome_title'); ?>
+            <?php $subtitle = get_field('welcome_subtitle'); ?>
         <?php endwhile; endif; ?>
 
         <header id="page_header"  >
@@ -38,8 +45,8 @@
             <div class="container">
             <div class="header_text">
                 <?php if (is_front_page()) : ?>
-                <h5>bienvenue à la</h5>
-                <h1><?php echo $blog_name; ?></h1>
+                <h1><?php echo $title; ?></h1>
+                <h5><?php echo $subtitle; ?></h5>
                 <div><?php echo $welcome_paragraph; ?></div>
                 <?php else: ?>
                     <h1><?php the_title(); ?></h1>

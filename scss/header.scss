@@ -96,6 +96,7 @@ header#page_header {
                     color: white;
                     padding: 20px;
                     border: 0;
+                    white-space: nowrap;
 
                     @media (min-width: 768px) {
                         display: inline-block;
@@ -194,7 +195,7 @@ header#page_header {
             background-color: transparentize(#09370b, 0.5);
         }
         &.header_colour_transparent {
-            background: none;
+            background-color:rgba(0,0,0,0.3);
         }
     }
 

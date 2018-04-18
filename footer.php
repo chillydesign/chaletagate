@@ -1,11 +1,24 @@
 
 <?php $tdu = get_template_directory_uri(); ?>
+<?php if(ICL_LANGUAGE_CODE == 'en'){
+  $contact = 'Contact';
+  $reservation = 'Book your stay';
+  $liens = 'Links';
+} elseif(ICL_LANGUAGE_CODE == 'es'){
+  $contact = 'Contacto';
+  $reservation = 'Reservar';
+  $liens = 'Enlaces útiles';
+} else{
+  $contact = 'Contact';
+  $reservation = 'Réservation';
+  $liens = 'Liens utiles';
+}?>
 
 <footer>
     <div class="container">
         <div class="footer_columns">
             <div class="footer_column">
-                <h4>Contact</h4>
+                <h4><?php echo $contact; ?></h4>
                 <ul>
                     <li><a href="mailto:info@agate17.ch">info@agate17.ch</a></li>
                     <li><a href="tel:41796579178">+41 (0)79 657 91 78</a></li>
@@ -15,7 +28,7 @@
             </div>
             <div class="footer_column">
 
-                <h4>Réservation</h4>
+                <h4><?php echo $reservation; ?></h4>
                 <ul>
                     <?php chilly_nav('footer_reservation'); ?>
                 </ul>
@@ -23,7 +36,7 @@
 
             </div>
             <div class="footer_column">
-                <h4>Liens utiles</h4>
+                <h4><?php echo $liens; ?></h4>
                 <ul>
                     <?php chilly_nav('footer_liens_utiles'); ?>
                 </ul>
@@ -32,7 +45,7 @@
         </div>
     </div>
     <div id="copyright">
-        <div class="container"><p>&copy; <?php echo date('Y'); ?> Chalet Agate.  Website by <a href="https://webfactor.ch">Webfactor</a>. </p></div>
+        <div class="container"><p>&copy; <?php echo date('Y'); ?> Résidence Agate.  Website by <a href="https://webfactor.ch">Webfactor</a>. </p></div>
     </div>
 
 </footer>

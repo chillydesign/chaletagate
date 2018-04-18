@@ -1,10 +1,22 @@
 <?php $locations = get_sub_field('points_gmap'); ?>
 <?php $tdu = get_template_directory_uri(); ?>
-
+<?php if(ICL_LANGUAGE_CODE == 'en'){
+  $amenites = 'Amenities';
+  $hivernales = 'Winter activities';
+  $estivales = 'Summer activities';
+} elseif(ICL_LANGUAGE_CODE == 'es'){
+  $amenites = 'Servicios';
+  $hivernales = 'Actividades Invernales';
+  $estivales = 'Actividades Estivales';
+} else {
+  $amenites = 'Aménités';
+  $hivernales = 'Activités hivernales';
+  $estivales = 'Activités estivales';
+} ?>
     <ul class="map_layers_nav">
-        <li class="change_category_link" data-category="amenites">Aménités</li>
-        <li class="change_category_link" data-category="winter">Activités hivernales</li>
-        <li class="change_category_link" data-category="summer">Activités estivales</li>
+        <li class="change_category_link" data-category="amenites"><?php echo $amenites; ?></li>
+        <li class="change_category_link" data-category="winter"><?php echo $hivernales; ?></li>
+        <li class="change_category_link" data-category="summer"><?php echo $estivales; ?></li>
     </ul>
 
 <div class="globalmap ">

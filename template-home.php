@@ -8,12 +8,14 @@
     <article id="post-<?php the_ID(); ?>" >
 
         <?php $appartment_gallery  = get_field('appartment_gallery'); ?>
+        <?php $apartment_subtitle = get_field('apartment_subtitle'); ?>
+        <?php $apartment_title = get_field('apartment_title'); ?>
         <?php $appartment_paragraph = get_field('appartment_paragraph'); ?>
         <?php $appartment_background = get_field('appartment_background'); ?>
         <section id="appartment_section">
             <div class="container">
-                <h5>découvrez</h5>
-                <h2>l’appartement</h2>
+                <h5><?php echo $apartment_subtitle; ?></h5>
+                <h2><?php echo $apartment_title; ?></h2>
 
 
                 <div class="carousel">
@@ -41,11 +43,13 @@
                 <div class="white_bar"></div>
                 <div class="white_bar white_bar_2"></div>
                 <?php if ( $appartment_big_picture['caption'] != '' ): ?>
-                    <p class="photo_caption"><?php echo  $appartment_big_picture['caption']; ?></p>
+                    <p class="photo_caption"><span><?php echo  $appartment_big_picture['caption']; ?></span></p>
                 <?php endif; ?>
             </section>
         <?php endif; ?>
 
+        <?php $program_subtitle = get_field('program_subtitle'); ?>
+        <?php $program_title = get_field('program_title'); ?>
         <?php $programme_paragraph = get_field('programme_paragraph'); ?>
         <?php $winter_paragraph = get_field('winter_paragraph'); ?>
         <?php $winter_photo = get_field('winter_photo'); ?>
@@ -54,15 +58,14 @@
         <?php $programme_background = get_field('programme_background'); ?>
         <section id="programme_section">
             <div class="container">
-                <h5>Que faire à Villars-sur-Ollons?</h5>
-                <h2>Au programme</h2>
+                <h5><?php echo $program_subtitle; ?></h5>
+                <h2><?php echo $program_title; ?></h2>
                 <p><?php echo $programme_paragraph; ?></p>
 
                 <br><br>
 
                 <div class="programme_row programme_row_flip">
                     <div class="programme_col">
-                        <h3>L'Hiver</h3>
                         <div><?php echo $winter_paragraph; ?></div>
                     </div>
                     <div class="programme_col">
@@ -80,7 +83,6 @@
 
                 <div class="programme_row">
                     <div class="programme_col">
-                        <h3>L’été</h3>
                         <div><?php echo $summer_paragraph; ?></div>
                     </div>
                     <div class="programme_col">
@@ -106,7 +108,7 @@
                 <div class="white_bar"></div>
                 <div class="white_bar white_bar_2"></div>
                 <?php if ( $programme_big_picture['caption'] != '' ): ?>
-                    <p class="photo_caption"><?php echo  $programme_big_picture['caption']; ?></p>
+                    <p class="photo_caption"><span><?php echo  $programme_big_picture['caption']; ?></span></p>
                 <?php endif; ?>
             </section>
         <?php endif; ?>
@@ -115,10 +117,11 @@
 
         <section id="location_section">
             <div class="container">
-                <h5>Votre séjour</h5>
-                <h2>Nous trouver</h2>
-                <?php $contact_content  = get_field('contact_content'); ?>
-
+              <?php $contact_content  = get_field('contact_content'); ?>
+              <?php $contact_subtitle  = get_field('contact_subtitle'); ?>
+              <?php $contact_title  = get_field('contact_title'); ?>
+                <h5><?php echo $contact_subtitle; ?></h5>
+                <h2><?php echo $contact_title; ?></h2>
 
                 <div class="programme_row programme_row_flip">
                     <div class="programme_col">

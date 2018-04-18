@@ -1,4 +1,6 @@
 body.home {
+  h1 {padding-bottom: 0; }
+  #page_header h5 {margin: 5px 0 20px;}
     section {
         @media (min-width: 768px) {
             text-align: center;
@@ -64,6 +66,8 @@ $parralel_amount: 20%;
                 text-align: right;
                 right: 80px;
                 transform: rotate(9deg);
+                padding-left: 10px;
+                padding-right: 10px;
             }
 
             .image_image {
@@ -115,6 +119,7 @@ $parralel_amount: 20%;
                     right: auto;
                     transform: rotate(-9deg);
                     text-align: left;
+                    padding-left: 10px;
                 }
             }
 
