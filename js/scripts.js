@@ -1,6 +1,7 @@
 import slick from '../node_modules/slick-carousel/slick/slick.js';
 import Masonry from '../node_modules/masonry-layout/dist/masonry.pkgd.js';
 import featherlight from '../node_modules/featherlight/release/featherlight.min.js';
+import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
 
 (function ($, root, undefined) {
 
@@ -41,16 +42,32 @@ import featherlight from '../node_modules/featherlight/release/featherlight.min.
         //MASONRY GALLERY
         var grid = document.querySelector('.masonry_gallery');
         if (grid)  {
-            setTimeout( function(){
-                var msnry = new Masonry( grid, {
-                    itemSelector: '.grid_item'
-                });
-            }, 500 );
+            var msnry = new Masonry( grid, {
+                // options...
+                itemSelector: '.grid_item',
+                percentPosition: true,
+                gutter: 0
+            });
+
+            setTimeout( function(){ msnry.layout(); }, 100 );
+            setTimeout( function(){ msnry.layout(); }, 250 );
+
         }
 
         //END OF MASONRY GALLERY
 
 
+        // lAZY LOAD GALLERY IMAGES
+        $("img.lazy").lazyload({
+
+            load : function(elements_left, settings) {
+                if (typeof msnry !== 'undefined') {
+                    msnry.layout();
+                }
+
+            }
+
+        });
 
 
 
