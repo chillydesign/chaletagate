@@ -58,6 +58,7 @@ import lazyload from '../node_modules/jquery-lazyload/jquery.lazyload.js';
 
 
         // lAZY LOAD GALLERY IMAGES
+        console.log('lazyloading');
         $("img.lazy").lazyload({
 
             load : function(elements_left, settings) {
