@@ -21,7 +21,7 @@
                 <h4><?php echo $contact; ?></h4>
                 <ul>
                     <li><a href="mailto:info@agate17.ch">info@agate17.ch</a></li>
-                    <li><a href="tel:41796579178">+41 (0)79 657 91 78</a></li>
+                    <li><a href="tel:0041793484562">+41(0)79 348 45 62</a></li>
                 </ul>
 
 

@@ -128,8 +128,8 @@ $parralel_amount: 20%;
         }
 
         @media (min-width: 768px) {
-            width: #{100% / 2};
-            min-width: #{100% / 2};
+            width: percentage(1/2);
+            min-width: percentage(1/2);
             padding: 0 15px;
 
             .image_image, .shadow_1, .shadow_2 {

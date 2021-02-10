@@ -11,10 +11,10 @@ a.gallery {
     padding: 0;
     list-style: none;
     .grid_item  {
-        width: #{100% / 2};
+        width: percentage(1/2);
 
         @media (min-width: 768px) {
-            width: #{100% / 3};
+            width: percentage(1/3);
         }
 
 

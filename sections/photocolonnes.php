@@ -10,7 +10,8 @@
             <?php $class =  ( $rr % 2 == 0) ? 'image_parallelogram_flipped' : ''; ?>
             <div class="programme_col">
 
-                <div class="image_parallelogram <?php echo $class; ?>">
+                <?php if($image): ?>
+                  <div class="image_parallelogram <?php echo $class; ?>">
                     <div class="image_image" style="background-image:url(<?php echo $image['sizes']['medium']; ?>)"></div>
                     <div class="shadow_1"></div>
                     <div class="shadow_2"></div>
@@ -18,6 +19,7 @@
                         <p class="photo_caption"><?php echo  $image['caption']; ?></p>
                     <?php endif; ?>
                 </div>
+              <?php endif; ?>
                 <div class="programme_col_content">
                     <?php if ($title): ?> <h3><?php echo $title; ?></h3>  <?php endif; ?>
                     <?php echo get_sub_field('content'); ?>

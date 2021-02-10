@@ -76,10 +76,10 @@ header#page_header {
                 }
 
                 @media (min-width: 768px) {
-                    width: #{100% / 8};
+                    width: percentage(1/8);
                     display: inline-block;
                     flex: 1 auto 0;
-                    width: #{100% / 8};
+                    width: percentage(1/8);
                     &.branding {
                         width: #{100% * 2 / 8};  // width should be 2/8ths wide
                         display: inline-block;
@@ -230,6 +230,16 @@ header#page_header {
         h1 {
 
         }
+        h2 {
+    font-size: 1.9em;
+    line-height: 150%;
+    max-width: 530px;
+    margin: auto;
+    letter-spacing: 1px;
+    text-transform: none;
+    font-weight: normal;
+    padding-bottom: 40px;
+}
         p {
             font-size: 1.9em;
             line-height: 150%;
