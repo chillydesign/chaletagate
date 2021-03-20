@@ -5,85 +5,42 @@
 @import 'typography';
 @import 'header';
 @import 'footer';
-@import 'carousel';
 
 @media (min-width: 768px) { }
 @media (min-width: 992px) { }
 @media (min-width: 1200px) { }
 
+*{
+  transition: ease-in-out 0.3s;
+}
+
+@keyframes fadeIn {
+0% {opacity:0;}
+100% {opacity:1; transform:translateY(0);}
+}
+
 body {
-    background: $background_color;
-    color: $brand_color;
+    color: $font_color;
     font-family: $font_stack;
-    font-size: 62.5%;
+    font-size: 16px;
     font-weight: normal;
+    line-height: 130%;
+    margin-bottom: -15px;
+}
 
+img {
+  width: 100%;
+  height: auto;
+}
 
+section{
+  padding: 50px 0;
 }
 iframe {background: #eee;}
+
+
+
+
+
 @import 'sections';
 @import 'home';
-@import 'gallery';
-@import 'cartes';
-
-// CALENDAR STYLING
-ul.simcal-events {
-   display: block;
-}
-span.simcal-day-label.simcal-day-number {
-        padding: 27% 0;
-    min-height: 55px!important;
-}
-
-td.simcal-past.simcal-day .simcal-day-number {
-    background: #ddd!important;
-}
-
-.simcal-default-calendar-grid.simcal-default-calendar-light .simcal-day-number {
-    background: #fff;
-}
-
-td.simcal-day div {
-    min-height: 0!important;
-}
-
-span.simcal-no-events, ul.simcal-events, span.simcal-events-dots {
-    display: none!important;
-}
-
-.simcal-default-calendar-grid>table {
-    max-width: 450px;
-}
-
-.simcal-default-calendar .simcal-current h3 {
-    font-size: 1.5em;
-}
-table.simcal-calendar-grid {
-    border: solid 10px white;
-    box-shadow: 0 0 52px rgba(9,25,55,0.1);
-}
-
-tbody.simcal-month, thead.simcal-calendar-head tr:nth-child(2) {
-    border: solid #0e3580 1px!important;
-}
-
-
-thead.simcal-calendar-head th{
-    border-bottom: 0;
-}
-
-.simcal-default-calendar-grid>table tbody td div {
-    border: 0!important;
-}
-
-td.simcal-day-has-events span.simcal-day-label.simcal-day-number {
-    text-decoration: line-through;
-}
-
-p.simcal-align-right {
-    display: none;
-}
-
-.simcal-default-calendar-grid.simcal-default-calendar-light .simcal-future .simcal-day-number {
-    background: #fff;
-}

@@ -1,52 +1,24 @@
 
 <?php $tdu = get_template_directory_uri(); ?>
-<?php if(ICL_LANGUAGE_CODE == 'en'){
-  $contact = 'Contact';
-  $reservation = 'Book your stay';
-  $liens = 'Links';
-} elseif(ICL_LANGUAGE_CODE == 'es'){
-  $contact = 'Contacto';
-  $reservation = 'Reservar';
-  $liens = 'Enlaces útiles';
-} else{
-  $contact = 'Contact';
-  $reservation = 'Réservation';
-  $liens = 'Liens utiles';
-}?>
-
 <footer>
+  <div class="top_links">
     <div class="container">
-        <div class="footer_columns">
-            <div class="footer_column">
-                <h4><?php echo $contact; ?></h4>
-                <ul>
-                    <li><a href="mailto:info@agate17.ch">info@agate17.ch</a></li>
-                    <li><a href="tel:0041793484562">+41(0)79 348 45 62</a></li>
-                </ul>
-
-
-            </div>
-            <div class="footer_column">
-
-                <h4><?php echo $reservation; ?></h4>
-                <ul>
-                    <?php chilly_nav('footer_reservation'); ?>
-                </ul>
-
-
-            </div>
-            <div class="footer_column">
-                <h4><?php echo $liens; ?></h4>
-                <ul>
-                    <?php chilly_nav('footer_liens_utiles'); ?>
-                </ul>
-            </div>
-
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="#">Connexion</a>
+          <a href="#">Contact</a>
         </div>
+        <div class="col-sm-4">
+          <a href="#">Termes et conditions</a>
+          <a href="#">Politique de confidentialité</a>
+        </div>
+      </div>
     </div>
-    <div id="copyright">
-        <div class="container"><p>&copy; <?php echo date('Y'); ?> Résidence Agate.  Website by <a href="https://webfactor.ch">Webfactor</a>. </p></div>
-    </div>
+  </div>
+
+  <div id="copyright">
+    <div class="container"><p>Copyright &copy; <?php echo date('Y'); ?> Sentinelle-ge |  Website by <a href="https://webfactor.ch">webfactor.ch</a></p></div>
+  </div>
 
 </footer>
 

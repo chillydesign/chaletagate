@@ -1,178 +1,64 @@
-
-
-/*TYPOGRAPHY*/
-h1,h2,h3,h4,h5 {
-    line-height: 120%;
-}
-
-h1 {
-    font-size: 4em;
-    padding:0 0 50px;
-    font-weight: bold;
-    text-transform: uppercase;
-}
 h2 {
-    font-size: 2.9em;
-    padding: 0 0 20px;
-    font-weight: bold;
-    text-transform: uppercase;
+  font-size: 1.7em;
+  line-height: 130%;
+  margin-bottom: 50px;
+  color: $blue;
 }
+
 h3 {
-    font-size: 2.21em;
-    padding:0 0 10px;
-    font-weight: bold;
-    text-transform: uppercase;
+  line-height: 130%;
+  margin-bottom: 10px;
+  color: $blue;
 }
-h4 {
-    font-size: 1.69em;
-    padding:0 0 10px;
-    font-weight: bold;
-}
-
-
-h5 {
-    font-family: $fancy_font_stack;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 3em;
-    position: relative;
-
-
-    @media (min-width: 768px) {
-        display: inline-block;
-        padding-left: 50px;
-        padding-right: 50px;
-        &:after, &:before {
-            content:'';
-            border-top:1px solid $brand_color;
-            border-bottom:1px solid $brand_color;
-            height: 7px;
-            width:30px;
-            position: absolute;
-            left: 0;
-            top:50%;
-        }
-        &:before {
-            left: auto;
-            right: 0;
-        }
-    }
-
-
-}
-
-@media (min-width: 768px){
-    h1 { font-size: 5em; }
-    h2 { font-size: 4.5em; padding: 0 0 60px }
-    h3 { font-size: 2.6em; }
-    h4 { font-size: 1.79em; }
-    h5 { font-size: 4em; }
-
-}
-
-
-
-
-p { font-size: 1.7em;padding:0 0 30px;line-height: 160%;font-weight:200;  }
-li { font-size: 1.5em;padding:0 0 5px;line-height: 160%; font-weight:200; }
-
-
-
-li li, li p {font-size: inherit;}
-ul ul , ul ol, ol ol {font-size: inherit}
-
-
-section ul {
-    list-style: disc;
-    margin:0 0 20px 30px;
-}
-section ol {
-    list-style: decimal;
-    margin:0 0 20px 30px;
-}
-
-
-
 
 a {
-    text-decoration: none;
-    border-bottom:1px solid saturate(lighten($brand_color,25),10);
-    display: inline-block;
-    @include transition(0.3s);
-
-    &:link, &:visited, &:active {
-        color: saturate(lighten($brand_color,15),10);
-    }
-    &:hover {
-        background-color: transparentize($brand_color,0.8)
-    }
-
+  color: inherit;
 }
 
+p, ul {
+  margin-bottom: 15px;
+}
 
-    a.button, a h6, h6 a {
-        border: 3px solid $brand_color;
-        padding: 13px 40px;
-        margin:10px 0;
-        text-align: center;
-        color: $brand_color!important;
-        font-size: 1.7em;
-        @media (min-width: 768px) {
-            display: inline-block;
-        }
-    }
-    .header_text a h6, .header_text h6 a {
-        border-color: white;
-        color: white!important;
-        &:hover {
-            background-color: transparentize(white,0.8)
-        }
-    }
+strong {color: $blue_grey;}
 
-
-
-  .header_text a h6, .header_text h6 a {
-      border-color: white;
-      color: white;
-      &:hover {
-          background-color: transparentize(white,0.8)
-      }
+ul {
+  list-style: none;
+  li {
+    background-image: url('../img/listdisc.png');
+    background-repeat: no-repeat;
+    background-position: top 5px left;
+    background-size: 12px;
+    padding-left: 18px;
+    margin-bottom: 5px;
   }
-
-
-
-
-
-
-strong, b {font-weight: bold;}
-em, i {font-style: italic}
-
-table {
-    width: 100%;
-    margin:0 0 40px;
 }
 
-th, td {font-size: 1.5em;padding:10px;border:0}
-section td {line-height: 160%;}
-th, thead td {
-    font-weight: bold;
-    border-bottom: 1px solid #f1f1f1
-}
-tr:nth-child(2n) {
-    td {
-        background-color: #f1f1f1;
-
-    }
+.greyitalics {
+  font-size: 0.8em;
+  font-style: italic;
+  color: #bbb;
+  margin-bottom: 15px;
+  display: block;
 }
 
-blockquote {
-    padding:20px 0 20px 40px;
-    border-left:4px solid #888;
-    margin:40px 20px 40px 40px;
-    font-size: 140%;
-    font-style: italic;
-    max-width: 700px;
+a.yellow_button, .yellow_button a, input[type="submit"] {
+  background-color: $yellow;
+  color: white;
+  text-shadow: 0 0 8px rgba(0,0,0,0.3);
+  font-weight: 800;
+  padding: 10px 30px;
+border-radius: 40px;
+text-decoration: none;
+display: inline-block;
+border:0;
+&:hover{
+  background-color: darken($yellow, 5%);
+  transform: scale(1.015);
 }
-blockquote p:last-child {padding-bottom: 0}
+}
 
-input {padding: 10px;width: 100%;font-size: 1.5em;appearance:none;}
+
+input, label {
+  display: inline-block;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,6 @@
+#!/bin/bash
+ssh webfactor << EOF
+ cd ~/sites/sentinelle-ge.ch/wp-content/themes/sentinelle;
+ git pull origin master;
+ echo "DONE!";
+EOF
